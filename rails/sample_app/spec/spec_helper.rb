@@ -2,10 +2,6 @@ require 'rubygems'
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
 
-config.before(:all) do
-  FactoryGirl.reload
-end
-
 # --- Instructions ---
 # Sort the contents of this file into a Spork.prefork and a Spork.each_run
 # block.
