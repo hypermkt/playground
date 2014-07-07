@@ -7,7 +7,8 @@ describe "StaticPages" do
   describe "Home page" do
     before { visit root_path }
     it { should  have_content('Sample App') }
-    it { have_title("#{base_title} | Home") }
+    it { have_title(full_title("")) }
+    it { have_title("| Home") }
   end
 
   describe "Help page" do
