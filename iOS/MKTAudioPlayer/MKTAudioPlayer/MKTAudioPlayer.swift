@@ -144,4 +144,11 @@ class MKTAudioPlayer: UIView {
 
         return "¥(currentTimeString) / ¥(durationString)";
     }
+
+    func xPositionFromSliderValue(aSlider: UISlider) -> Float {
+        var sliderRange: Float = aSlider.frame.size.width - aSlider.currentThumbImage.size.width;
+        var sliderOrigin :Float = aSlider.frame.origin.x + (aSlider.currentThumbImage.size.width / 2.0);
+        var sliderValueToPixels: Float = ((aSlider.value-aSlider.minimumValue)/(aSlider.maximumValue-aSlider.minimumValue) * sliderRange) + sliderOrigin;
+        return sliderValueToPixels;
+    }
 }
