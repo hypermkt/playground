@@ -133,16 +133,15 @@ class MKTAudioPlayer: UIView {
     }
 
 
-
     func calculateCurrentDuration() -> NSString {
-        // 下記翻訳中
-        long currentPlaybackTime = _audioPlayer.currentTime;
-        
-        int currentHours = (int)(currentPlaybackTime / 3600);
-        int currentMinutes = (int)((currentPlaybackTime / 60) - currentHours*60);
-        int currentSeconds = (int)(currentPlaybackTime % 60);
-        NSString *currentTimeString = (currentHours > 0) ? [NSString stringWithFormat:@"%i:%02d:%02d", currentHours, currentMinutes, currentSeconds] : [NSString stringWithFormat:@"%02d:%02d", currentMinutes, currentSeconds];
-        
-        return [NSString stringWithFormat:@"%@ / %@", currentTimeString, self.durationString];
+        var currentPlaybackTime: Double = self._audioPlayer.currentTime
+        var currentHours: Int = Int(currentPlaybackTime / 3600)
+        var currentMinutes: Int = (Int(currentPlaybackTime)/60)-currentHours*60
+        var currentSeconds: Int = (Int(currentPlaybackTime) % 60);
+        var currentTimeString: NSString = (currentHours > 0) ?
+            "¥(currentHours):¥(currentMinutes):¥(currentSeconds)" :
+            "¥(currentMinutes), ¥(currentSeconds)"
+
+        return "¥(currentTimeString) / ¥(durationString)";
     }
 }
