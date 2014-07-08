@@ -78,6 +78,13 @@ class MKTAudioPlayer: UIView {
         changeToVisible(self.isVisible, animated: animated)
     }
 
+    func sliderChanged(slider: UISlider)
+    {
+        // setCurrentTimeメソッドがない？
+        // refs : https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/Chapters/Reference.html#//apple_ref/occ/instp/AVAudioPlayer
+        // [_audioPlayer setCurrentTime:(int)slider.value];
+    }
+    
     func hideAnimated(animated:Bool) {
         self.isVisible = false;
         changeToVisible(self.isVisible, animated: animated)
