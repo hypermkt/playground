@@ -38,7 +38,9 @@ class DKAudioPlayerSwiftVersion :UIView {
         
         self._audioPlayer = AVAudioPlayer()
         self._playPauseButton = UIButton()
-        
+
+        var frame: CGRect = CGRectMake(0, 0, 0, 0);
+        super.init(frame: frame);
     }
 
     func initWithAudioFilePath(audioFilePath: NSString, parentViewController:UIViewController) -> DKAudioPlayerSwiftVersion {
@@ -56,14 +58,8 @@ class DKAudioPlayerSwiftVersion :UIView {
     }
 
     func initWithAudioFilePath(width: CGFloat, height: CGFloat) -> DKAudioPlayerSwiftVersion {
-        if (height == 0) height = 75.0;
-        
-        CGRect frame = CGRectMake(0, 0, width, height);
-        
-        self = [super initWithFrame:frame];
-        
         if (self) {
-            
+            /*
             _audioFilePath = audioFilePath;
             NSAssert(audioFilePath != nil, @"Audio file path cannot be nil");
             
@@ -144,8 +140,9 @@ class DKAudioPlayerSwiftVersion :UIView {
             [self addSubview:_bubbleView];
             
             self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+        */
         }
-        
+
         return self;
     }
     
