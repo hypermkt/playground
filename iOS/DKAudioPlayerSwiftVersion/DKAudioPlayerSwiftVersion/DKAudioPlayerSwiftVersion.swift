@@ -1,6 +1,6 @@
 //
-//  MKTAudioPlayer.swift
-//  MKTAudioPlayer
+//  DKAudioPlayerSwiftVersion.swift
+//  DKAudioPlayerSwiftVersion
 //
 //  Created by usr0600221 on 2014/07/08.
 //  Copyright (c) 2014年 hypermkt. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class MKTAudioPlayer :UIView {
+class DKAudioPlayerSwiftVersion :UIView {
 
     var _playerHeight: Float;
     var _playerWidth: Float;
@@ -42,7 +42,7 @@ class MKTAudioPlayer :UIView {
         
     }
 
-    func initWithAudioFilePath(audioFilePath: NSString, parentViewController:UIViewController) -> MKTAudioPlayer {
+    func initWithAudioFilePath(audioFilePath: NSString, parentViewController:UIViewController) -> DKAudioPlayerSwiftVersion {
         var frame: CGRect = CGRectMake(0, 0, parentViewController.view.bounds.size.width, 75.0)
         
         // selfへの代入はどうする？
@@ -56,7 +56,7 @@ class MKTAudioPlayer :UIView {
         return self;
     }
 
-    func initWithAudioFilePath(width: CGFloat, height: CGFloat) -> MKTAudioPlayer {
+    func initWithAudioFilePath(width: CGFloat, height: CGFloat) -> DKAudioPlayerSwiftVersion {
         if (height == 0) height = 75.0;
         
         CGRect frame = CGRectMake(0, 0, width, height);
