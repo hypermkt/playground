@@ -12,8 +12,8 @@
 		8378872A196BABB500D01077 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83788729196BABB500D01077 /* SecondViewController.swift */; };
 		8378872D196BABB800D01077 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8378872B196BABB800D01077 /* Main.storyboard */; };
 		8378872F196BABB800D01077 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8378872E196BABB800D01077 /* Images.xcassets */; };
-		8378873B196BABB900D01077 /* MKTAudioPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8378873A196BABB900D01077 /* MKTAudioPlayerTests.swift */; };
-		83788745196BABED00D01077 /* MKTAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83788744196BABED00D01077 /* MKTAudioPlayer.swift */; };
+		8378873B196BABB900D01077 /* DKAudioPlayerSwiftVersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8378873A196BABB900D01077 /* DKAudioPlayerSwiftVersionTests.swift */; };
+		83788745196BABED00D01077 /* DKAudioPlayerSwiftVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83788744196BABED00D01077 /* DKAudioPlayerSwiftVersion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,22 +22,22 @@
 			containerPortal = 83788718196BABB500D01077 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8378871F196BABB500D01077;
-			remoteInfo = MKTAudioPlayer;
+			remoteInfo = DKAudioPlayerSwiftVersion;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		83788720196BABB500D01077 /* MKTAudioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MKTAudioPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		83788720196BABB500D01077 /* DKAudioPlayerSwiftVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DKAudioPlayerSwiftVersion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83788724196BABB500D01077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83788725196BABB500D01077 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83788727196BABB500D01077 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		83788729196BABB500D01077 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		8378872C196BABB800D01077 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8378872E196BABB800D01077 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		83788734196BABB900D01077 /* MKTAudioPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MKTAudioPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		83788734196BABB900D01077 /* DKAudioPlayerSwiftVersionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DKAudioPlayerSwiftVersionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83788739196BABB900D01077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8378873A196BABB900D01077 /* MKTAudioPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKTAudioPlayerTests.swift; sourceTree = "<group>"; };
-		83788744196BABED00D01077 /* MKTAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTAudioPlayer.swift; sourceTree = "<group>"; };
+		8378873A196BABB900D01077 /* DKAudioPlayerSwiftVersionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAudioPlayerSwiftVersionTests.swift; sourceTree = "<group>"; };
+		83788744196BABED00D01077 /* DKAudioPlayerSwiftVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKAudioPlayerSwiftVersion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +61,8 @@
 		83788717196BABB500D01077 = {
 			isa = PBXGroup;
 			children = (
-				83788722196BABB500D01077 /* MKTAudioPlayer */,
-				83788737196BABB900D01077 /* MKTAudioPlayerTests */,
+				83788722196BABB500D01077 /* DKAudioPlayerSwiftVersion */,
+				83788737196BABB900D01077 /* DKAudioPlayerSwiftVersionTests */,
 				83788721196BABB500D01077 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,13 +70,13 @@
 		83788721196BABB500D01077 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				83788720196BABB500D01077 /* MKTAudioPlayer.app */,
-				83788734196BABB900D01077 /* MKTAudioPlayerTests.xctest */,
+				83788720196BABB500D01077 /* DKAudioPlayerSwiftVersion.app */,
+				83788734196BABB900D01077 /* DKAudioPlayerSwiftVersionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		83788722196BABB500D01077 /* MKTAudioPlayer */ = {
+		83788722196BABB500D01077 /* DKAudioPlayerSwiftVersion */ = {
 			isa = PBXGroup;
 			children = (
 				83788725196BABB500D01077 /* AppDelegate.swift */,
@@ -85,9 +85,9 @@
 				8378872B196BABB800D01077 /* Main.storyboard */,
 				8378872E196BABB800D01077 /* Images.xcassets */,
 				83788723196BABB500D01077 /* Supporting Files */,
-				83788744196BABED00D01077 /* MKTAudioPlayer.swift */,
+				83788744196BABED00D01077 /* DKAudioPlayerSwiftVersion.swift */,
 			);
-			path = MKTAudioPlayer;
+			path = DKAudioPlayerSwiftVersion;
 			sourceTree = "<group>";
 		};
 		83788723196BABB500D01077 /* Supporting Files */ = {
@@ -98,13 +98,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		83788737196BABB900D01077 /* MKTAudioPlayerTests */ = {
+		83788737196BABB900D01077 /* DKAudioPlayerSwiftVersionTests */ = {
 			isa = PBXGroup;
 			children = (
-				8378873A196BABB900D01077 /* MKTAudioPlayerTests.swift */,
+				8378873A196BABB900D01077 /* DKAudioPlayerSwiftVersionTests.swift */,
 				83788738196BABB900D01077 /* Supporting Files */,
 			);
-			path = MKTAudioPlayerTests;
+			path = DKAudioPlayerSwiftVersionTests;
 			sourceTree = "<group>";
 		};
 		83788738196BABB900D01077 /* Supporting Files */ = {
@@ -118,9 +118,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8378871F196BABB500D01077 /* MKTAudioPlayer */ = {
+		8378871F196BABB500D01077 /* DKAudioPlayerSwiftVersion */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8378873E196BABB900D01077 /* Build configuration list for PBXNativeTarget "MKTAudioPlayer" */;
+			buildConfigurationList = 8378873E196BABB900D01077 /* Build configuration list for PBXNativeTarget "DKAudioPlayerSwiftVersion" */;
 			buildPhases = (
 				8378871C196BABB500D01077 /* Sources */,
 				8378871D196BABB500D01077 /* Frameworks */,
@@ -130,14 +130,14 @@
 			);
 			dependencies = (
 			);
-			name = MKTAudioPlayer;
-			productName = MKTAudioPlayer;
-			productReference = 83788720196BABB500D01077 /* MKTAudioPlayer.app */;
+			name = DKAudioPlayerSwiftVersion;
+			productName = DKAudioPlayerSwiftVersion;
+			productReference = 83788720196BABB500D01077 /* DKAudioPlayerSwiftVersion.app */;
 			productType = "com.apple.product-type.application";
 		};
-		83788733196BABB900D01077 /* MKTAudioPlayerTests */ = {
+		83788733196BABB900D01077 /* DKAudioPlayerSwiftVersionTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 83788741196BABB900D01077 /* Build configuration list for PBXNativeTarget "MKTAudioPlayerTests" */;
+			buildConfigurationList = 83788741196BABB900D01077 /* Build configuration list for PBXNativeTarget "DKAudioPlayerSwiftVersionTests" */;
 			buildPhases = (
 				83788730196BABB900D01077 /* Sources */,
 				83788731196BABB900D01077 /* Frameworks */,
@@ -148,9 +148,9 @@
 			dependencies = (
 				83788736196BABB900D01077 /* PBXTargetDependency */,
 			);
-			name = MKTAudioPlayerTests;
-			productName = MKTAudioPlayerTests;
-			productReference = 83788734196BABB900D01077 /* MKTAudioPlayerTests.xctest */;
+			name = DKAudioPlayerSwiftVersionTests;
+			productName = DKAudioPlayerSwiftVersionTests;
+			productReference = 83788734196BABB900D01077 /* DKAudioPlayerSwiftVersionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -171,7 +171,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8378871B196BABB500D01077 /* Build configuration list for PBXProject "MKTAudioPlayer" */;
+			buildConfigurationList = 8378871B196BABB500D01077 /* Build configuration list for PBXProject "DKAudioPlayerSwiftVersion" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -184,8 +184,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8378871F196BABB500D01077 /* MKTAudioPlayer */,
-				83788733196BABB900D01077 /* MKTAudioPlayerTests */,
+				8378871F196BABB500D01077 /* DKAudioPlayerSwiftVersion */,
+				83788733196BABB900D01077 /* DKAudioPlayerSwiftVersionTests */,
 			);
 		};
 /* End PBXProject section */
@@ -216,7 +216,7 @@
 			files = (
 				8378872A196BABB500D01077 /* SecondViewController.swift in Sources */,
 				83788726196BABB500D01077 /* AppDelegate.swift in Sources */,
-				83788745196BABED00D01077 /* MKTAudioPlayer.swift in Sources */,
+				83788745196BABED00D01077 /* DKAudioPlayerSwiftVersion.swift in Sources */,
 				83788728196BABB500D01077 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,7 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8378873B196BABB900D01077 /* MKTAudioPlayerTests.swift in Sources */,
+				8378873B196BABB900D01077 /* DKAudioPlayerSwiftVersionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,7 +234,7 @@
 /* Begin PBXTargetDependency section */
 		83788736196BABB900D01077 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8378871F196BABB500D01077 /* MKTAudioPlayer */;
+			target = 8378871F196BABB500D01077 /* DKAudioPlayerSwiftVersion */;
 			targetProxy = 83788735196BABB900D01077 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -333,7 +333,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = MKTAudioPlayer/Info.plist;
+				INFOPLIST_FILE = DKAudioPlayerSwiftVersion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -344,7 +344,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = MKTAudioPlayer/Info.plist;
+				INFOPLIST_FILE = DKAudioPlayerSwiftVersion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -353,7 +353,7 @@
 		83788742196BABB900D01077 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MKTAudioPlayer.app/MKTAudioPlayer";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DKAudioPlayerSwiftVersion.app/DKAudioPlayerSwiftVersion";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -362,7 +362,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = MKTAudioPlayerTests/Info.plist;
+				INFOPLIST_FILE = DKAudioPlayerSwiftVersionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -373,12 +373,12 @@
 		83788743196BABB900D01077 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MKTAudioPlayer.app/MKTAudioPlayer";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DKAudioPlayerSwiftVersion.app/DKAudioPlayerSwiftVersion";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = MKTAudioPlayerTests/Info.plist;
+				INFOPLIST_FILE = DKAudioPlayerSwiftVersionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -389,7 +389,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8378871B196BABB500D01077 /* Build configuration list for PBXProject "MKTAudioPlayer" */ = {
+		8378871B196BABB500D01077 /* Build configuration list for PBXProject "DKAudioPlayerSwiftVersion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8378873C196BABB900D01077 /* Debug */,
@@ -398,7 +398,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8378873E196BABB900D01077 /* Build configuration list for PBXNativeTarget "MKTAudioPlayer" */ = {
+		8378873E196BABB900D01077 /* Build configuration list for PBXNativeTarget "DKAudioPlayerSwiftVersion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8378873F196BABB900D01077 /* Debug */,
@@ -406,7 +406,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		83788741196BABB900D01077 /* Build configuration list for PBXNativeTarget "MKTAudioPlayerTests" */ = {
+		83788741196BABB900D01077 /* Build configuration list for PBXNativeTarget "DKAudioPlayerSwiftVersionTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83788742196BABB900D01077 /* Debug */,

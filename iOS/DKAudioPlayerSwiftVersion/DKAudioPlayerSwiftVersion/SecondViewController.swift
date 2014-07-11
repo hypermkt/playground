@@ -1,14 +1,13 @@
 //
-//  FirstViewController.swift
-//  MKTAudioPlayer
+//  SecondViewController.swift
+//  DKAudioPlayerSwiftVersion
 //
-//  Created by usr0600221 on 2014/07/08.
 //  Copyright (c) 2014年 hypermkt. All rights reserved.
 //
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class SecondViewController: UIViewController {
                             
     override func viewDidLoad() {
         super.viewDidLoad()

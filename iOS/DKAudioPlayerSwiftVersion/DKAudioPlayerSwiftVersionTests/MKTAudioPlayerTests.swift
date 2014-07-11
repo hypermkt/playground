@@ -1,14 +1,13 @@
 //
-//  MKTAudioPlayerTests.swift
-//  MKTAudioPlayerTests
+//  DKAudioPlayerSwiftVersionTests.swift
+//  DKAudioPlayerSwiftVersionTests
 //
-//  Created by usr0600221 on 2014/07/08.
 //  Copyright (c) 2014年 hypermkt. All rights reserved.
 //
 
 import XCTest
 
-class MKTAudioPlayerTests: XCTestCase {
+class DKAudioPlayerSwiftVersionTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

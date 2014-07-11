@@ -1,8 +1,7 @@
 //
 //  AppDelegate.swift
-//  MKTAudioPlayer
+//  DKAudioPlayerSwiftVersion
 //
-//  Created by usr0600221 on 2014/07/08.
 //  Copyright (c) 2014年 hypermkt. All rights reserved.
 //
 
