@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F0F90AA4-DCD3-4BE3-9E35-393D42754D5A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TableViewTest</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B52418CED376A08C25FA4AD797EA7A37D5F2AD75</key>
+		<string>github.com:hypermkt/hypermkt.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iOS/TableViewTest/TableViewTest.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B52418CED376A08C25FA4AD797EA7A37D5F2AD75</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:hypermkt/hypermkt.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B52418CED376A08C25FA4AD797EA7A37D5F2AD75</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B52418CED376A08C25FA4AD797EA7A37D5F2AD75</string>
+			<key>IDESourceControlWCCName</key>
+			<string>hypermkt</string>
+		</dict>
+	</array>
+</dict>
+</plist>
