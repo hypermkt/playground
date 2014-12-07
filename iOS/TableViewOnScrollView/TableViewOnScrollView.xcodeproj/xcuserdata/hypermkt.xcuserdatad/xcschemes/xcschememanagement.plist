@@ -4,12 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>TableViewControllerTest.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>TableViewTest2.xcscheme</key>
+		<key>TableViewOnScrollView.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -17,22 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>29679B1D1A343B8000623F71</key>
+		<key>29679B4B1A3451A700623F71</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>29679B321A343B8000623F71</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>29679B761A34593C00623F71</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>29679B8A1A34593C00623F71</key>
+		<key>29679B601A3451A700623F71</key>
 		<dict>
 			<key>primary</key>
 			<true/>
