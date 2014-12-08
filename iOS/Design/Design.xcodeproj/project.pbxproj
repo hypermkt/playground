@@ -13,6 +13,10 @@
 		29192FEF1A3275B3007E8141 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29192FEE1A3275B3007E8141 /* Images.xcassets */; };
 		29192FF21A3275B3007E8141 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29192FF01A3275B3007E8141 /* LaunchScreen.xib */; };
 		29192FFE1A3275B3007E8141 /* DesignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29192FFD1A3275B3007E8141 /* DesignTests.swift */; };
+		29F316151A35EAD400BC56D8 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29F316141A35EAD400BC56D8 /* HeaderView.xib */; };
+		29F316171A35EB6000BC56D8 /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29F316161A35EB6000BC56D8 /* FooterView.xib */; };
+		29F316191A35F01100BC56D8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F316181A35F01100BC56D8 /* HeaderView.swift */; };
+		29F3161B1A35F12900BC56D8 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F3161A1A35F12900BC56D8 /* FooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		29192FF71A3275B3007E8141 /* DesignTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29192FFC1A3275B3007E8141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29192FFD1A3275B3007E8141 /* DesignTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTests.swift; sourceTree = "<group>"; };
+		29F316141A35EAD400BC56D8 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		29F316161A35EB6000BC56D8 /* FooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
+		29F316181A35F01100BC56D8 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		29F3161A1A35F12900BC56D8 /* FooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +90,11 @@
 				29192FEB1A3275B3007E8141 /* Main.storyboard */,
 				29192FEE1A3275B3007E8141 /* Images.xcassets */,
 				29192FF01A3275B3007E8141 /* LaunchScreen.xib */,
+				29F316181A35F01100BC56D8 /* HeaderView.swift */,
 				29192FE51A3275B3007E8141 /* Supporting Files */,
+				29F316141A35EAD400BC56D8 /* HeaderView.xib */,
+				29F3161A1A35F12900BC56D8 /* FooterView.swift */,
+				29F316161A35EB6000BC56D8 /* FooterView.xib */,
 			);
 			path = Design;
 			sourceTree = "<group>";
@@ -195,6 +207,8 @@
 				29192FED1A3275B3007E8141 /* Main.storyboard in Resources */,
 				29192FF21A3275B3007E8141 /* LaunchScreen.xib in Resources */,
 				29192FEF1A3275B3007E8141 /* Images.xcassets in Resources */,
+				29F316171A35EB6000BC56D8 /* FooterView.xib in Resources */,
+				29F316151A35EAD400BC56D8 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +227,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				29192FEA1A3275B3007E8141 /* ViewController.swift in Sources */,
+				29F3161B1A35F12900BC56D8 /* FooterView.swift in Sources */,
+				29F316191A35F01100BC56D8 /* HeaderView.swift in Sources */,
 				29192FE81A3275B3007E8141 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +355,7 @@
 				INFOPLIST_FILE = Design/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -405,6 +422,7 @@
 				291930031A3275B3007E8141 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		291930041A3275B3007E8141 /* Build configuration list for PBXNativeTarget "DesignTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +431,7 @@
 				291930061A3275B3007E8141 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
