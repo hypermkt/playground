@@ -13,7 +13,7 @@ class ViewController: UIViewController,
     UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    let texts = [
+    let prefs = [
         "東京",
         "埼玉",
         "神奈川",
@@ -26,6 +26,12 @@ class ViewController: UIViewController,
 //        "滋賀",
 //        "大阪",
 //        "福岡",
+    ]
+    
+    let cities = [
+        "入間市",
+        "狭山市",
+        "所沢市",
     ]
 
     override func viewDidLoad() {
@@ -46,7 +52,7 @@ class ViewController: UIViewController,
    
     // テーブル全体のセクションの数を返す
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -79,15 +85,35 @@ class ViewController: UIViewController,
         return view.frame.size.height
     }
     
-    // ヘッダーセクション内のセルの数を返w
+    // ヘッダーセクション内のセルの数を返す
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return texts.count
+        var count:Int?
+        switch (section) {
+        case 0:
+            count = self.prefs.count
+            break
+        case 1:
+            count = self.cities.count
+            break
+        default:
+            break
+        }
+        return count!
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
 
-        cell.textLabel?.text = self.texts[indexPath.row]
+        switch (indexPath.section) {
+        case 0:
+            cell.textLabel?.text = self.prefs[indexPath.row]
+            break
+        case 1:
+            cell.textLabel?.text = self.cities[indexPath.row]
+            break
+        default:
+            break
+        }
         return cell
     }
 }
