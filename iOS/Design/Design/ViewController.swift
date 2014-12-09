@@ -14,18 +14,10 @@ class ViewController: UIViewController,
 
     @IBOutlet weak var tableView: UITableView!
     let prefs = [
+        "",
         "東京",
         "埼玉",
         "神奈川",
-//        "千葉",
-//        "群馬",
-//        "茨城",
-//        "静岡",
-//        "栃木",
-//        "福島",
-//        "滋賀",
-//        "大阪",
-//        "福岡",
     ]
     
     let cities = [
@@ -39,6 +31,7 @@ class ViewController: UIViewController,
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        tableView.registerNib(UINib(nibName: "TopHeaderView", bundle: nil), forCellReuseIdentifier: "TopHeaderView")
         tableView.registerNib(UINib(nibName: "HeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "HeaderView")
         tableView.registerNib(UINib(nibName: "FooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: "FooterView")
         
@@ -112,9 +105,13 @@ class ViewController: UIViewController,
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
+        let topHeaderViewCell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("TopHeaderView") as UITableViewCell
 
         switch (indexPath.section) {
         case 0:
+            if (indexPath.row == 0) {
+                return topHeaderViewCell
+            }
             cell.textLabel?.text = self.prefs[indexPath.row]
             break
         case 1:
@@ -124,6 +121,13 @@ class ViewController: UIViewController,
             break
         }
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if (indexPath.section == 0 && indexPath.row == 0) {
+            return 150
+        }
+        return 50
     }
 }
 
