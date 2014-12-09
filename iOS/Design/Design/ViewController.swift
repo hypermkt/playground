@@ -56,6 +56,9 @@ class ViewController: UIViewController,
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if (section == 0) {
+            return nil
+        }
         return "\(section)番目のヘッダーのセクションタイトル"
     }
     
@@ -65,12 +68,18 @@ class ViewController: UIViewController,
    
     // ヘッダーセクションにViewを指定
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if (section == 0) {
+            return nil
+        }
         let view:UITableViewHeaderFooterView = tableView.dequeueReusableHeaderFooterViewWithIdentifier("HeaderView") as UITableViewHeaderFooterView
         return view
     }
    
     // ヘッダーセクションの高さを指定
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if (section == 0) {
+            return 0
+        }
         let view:UITableViewHeaderFooterView = tableView.dequeueReusableHeaderFooterViewWithIdentifier("HeaderView") as UITableViewHeaderFooterView
         return view.frame.size.height
     }
