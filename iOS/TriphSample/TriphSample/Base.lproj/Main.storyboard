@@ -59,6 +59,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="areaTableView" destination="mLL-gJ-YKr" id="CrT-X4-Odg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,6 +14,8 @@
 		833DDCCE1A39547C000102E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 833DDCCD1A39547C000102E2 /* Images.xcassets */; };
 		833DDCD11A39547C000102E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 833DDCCF1A39547C000102E2 /* LaunchScreen.xib */; };
 		833DDCDD1A39547D000102E2 /* TriphSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DDCDC1A39547D000102E2 /* TriphSampleTests.swift */; };
+		833DDCE81A395860000102E2 /* AreaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 833DDCE71A395860000102E2 /* AreaCell.xib */; };
+		833DDCEA1A395888000102E2 /* AreaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DDCE91A395888000102E2 /* AreaCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		833DDCD61A39547C000102E2 /* TriphSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriphSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		833DDCDB1A39547D000102E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		833DDCDC1A39547D000102E2 /* TriphSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriphSampleTests.swift; sourceTree = "<group>"; };
+		833DDCE71A395860000102E2 /* AreaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AreaCell.xib; path = Views/AreaCell.xib; sourceTree = "<group>"; };
+		833DDCE91A395888000102E2 /* AreaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AreaCell.swift; path = Views/AreaCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 		833DDCC11A39547C000102E2 /* TriphSample */ = {
 			isa = PBXGroup;
 			children = (
+				833DDCE61A39583C000102E2 /* Views */,
 				833DDCC41A39547C000102E2 /* AppDelegate.swift */,
 				833DDCC61A39547C000102E2 /* MasterViewController.swift */,
 				833DDCC81A39547C000102E2 /* DetailViewController.swift */,
@@ -113,6 +118,15 @@
 				833DDCDB1A39547D000102E2 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		833DDCE61A39583C000102E2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				833DDCE71A395860000102E2 /* AreaCell.xib */,
+				833DDCE91A395888000102E2 /* AreaCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +210,7 @@
 			files = (
 				833DDCCC1A39547C000102E2 /* Main.storyboard in Resources */,
 				833DDCD11A39547C000102E2 /* LaunchScreen.xib in Resources */,
+				833DDCE81A395860000102E2 /* AreaCell.xib in Resources */,
 				833DDCCE1A39547C000102E2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +231,7 @@
 			files = (
 				833DDCC91A39547C000102E2 /* DetailViewController.swift in Sources */,
 				833DDCC71A39547C000102E2 /* MasterViewController.swift in Sources */,
+				833DDCEA1A395888000102E2 /* AreaCell.swift in Sources */,
 				833DDCC51A39547C000102E2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
