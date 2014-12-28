@@ -14,6 +14,7 @@
 		296B30C01A5012ED0039CB65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296B30BF1A5012ED0039CB65 /* Images.xcassets */; };
 		296B30C31A5012ED0039CB65 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 296B30C11A5012ED0039CB65 /* LaunchScreen.xib */; };
 		296B30CF1A5012ED0039CB65 /* SplitDataSourceFromTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B30CE1A5012ED0039CB65 /* SplitDataSourceFromTableViewTests.swift */; };
+		296B30D91A5014410039CB65 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B30D81A5014410039CB65 /* TableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		296B30C81A5012ED0039CB65 /* SplitDataSourceFromTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplitDataSourceFromTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		296B30CD1A5012ED0039CB65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		296B30CE1A5012ED0039CB65 /* SplitDataSourceFromTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitDataSourceFromTableViewTests.swift; sourceTree = "<group>"; };
+		296B30D81A5014410039CB65 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				296B30C11A5012ED0039CB65 /* LaunchScreen.xib */,
 				296B30B71A5012ED0039CB65 /* SplitDataSourceFromTableView.xcdatamodeld */,
 				296B30B31A5012ED0039CB65 /* Supporting Files */,
+				296B30D81A5014410039CB65 /* TableViewDataSource.swift */,
 			);
 			path = SplitDataSourceFromTableView;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			files = (
 				296B30BB1A5012ED0039CB65 /* ViewController.swift in Sources */,
 				296B30B61A5012ED0039CB65 /* AppDelegate.swift in Sources */,
+				296B30D91A5014410039CB65 /* TableViewDataSource.swift in Sources */,
 				296B30B91A5012ED0039CB65 /* SplitDataSourceFromTableView.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
