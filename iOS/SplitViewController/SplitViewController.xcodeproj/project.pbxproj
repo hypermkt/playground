@@ -16,6 +16,7 @@
 		291D38FC1A5EBD9D00F86206 /* SplitViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291D38FB1A5EBD9D00F86206 /* SplitViewControllerTests.swift */; };
 		291D39061A5EC5DE00F86206 /* PickupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291D39051A5EC5DE00F86206 /* PickupViewController.swift */; };
 		291D39081A5EC61200F86206 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291D39071A5EC61200F86206 /* ListViewController.swift */; };
+		291D390A1A5ED4C400F86206 /* FooterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291D39091A5ED4C400F86206 /* FooterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		291D38FB1A5EBD9D00F86206 /* SplitViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewControllerTests.swift; sourceTree = "<group>"; };
 		291D39051A5EC5DE00F86206 /* PickupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickupViewController.swift; sourceTree = "<group>"; };
 		291D39071A5EC61200F86206 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		291D39091A5ED4C400F86206 /* FooterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				291D38E01A5EBD9D00F86206 /* Supporting Files */,
 				291D39051A5EC5DE00F86206 /* PickupViewController.swift */,
 				291D39071A5EC61200F86206 /* ListViewController.swift */,
+				291D39091A5ED4C400F86206 /* FooterViewController.swift */,
 			);
 			path = SplitViewController;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				291D38E61A5EBD9D00F86206 /* SplitViewController.xcdatamodeld in Sources */,
 				291D39081A5EC61200F86206 /* ListViewController.swift in Sources */,
 				291D38E31A5EBD9D00F86206 /* AppDelegate.swift in Sources */,
+				291D390A1A5ED4C400F86206 /* FooterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

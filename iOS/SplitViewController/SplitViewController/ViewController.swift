@@ -15,12 +15,16 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let pickup: PickupViewController = storyboard?.instantiateViewControllerWithIdentifier("PickupViewController") as PickupViewController
         let list: ListViewController = storyboard?.instantiateViewControllerWithIdentifier("ListViewController") as ListViewController
+        let footer: FooterViewController = storyboard?.instantiateViewControllerWithIdentifier("FooterViewController") as FooterViewController
         addChildViewController(pickup)
         addChildViewController(list)
-        pickup.view.frame = CGRectMake(0, 0, 320, 200)
-        list.view.frame = CGRectMake(0, 200, 320, 386)
+        addChildViewController(footer)
+        pickup.view.frame = CGRectMake(0, 0, 320, 100)
+        list.view.frame = CGRectMake(0, 100, 320, 386)
+        footer.view.frame = CGRectMake(0, 486, 320, 100)
         self.view.addSubview(pickup.view)
         self.view.addSubview(list.view)
+        self.view.addSubview(footer.view)
         
         
     }
