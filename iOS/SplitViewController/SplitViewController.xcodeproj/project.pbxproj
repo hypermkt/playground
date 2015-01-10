@@ -17,6 +17,7 @@
 		291D39061A5EC5DE00F86206 /* PickupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291D39051A5EC5DE00F86206 /* PickupViewController.swift */; };
 		291D39081A5EC61200F86206 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291D39071A5EC61200F86206 /* ListViewController.swift */; };
 		291D390A1A5ED4C400F86206 /* FooterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291D39091A5ED4C400F86206 /* FooterViewController.swift */; };
+		29E688E31A60E7F1008EE317 /* ListViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E688E21A60E7F1008EE317 /* ListViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		291D39051A5EC5DE00F86206 /* PickupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickupViewController.swift; sourceTree = "<group>"; };
 		291D39071A5EC61200F86206 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		291D39091A5ED4C400F86206 /* FooterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterViewController.swift; sourceTree = "<group>"; };
+		29E688E21A60E7F1008EE317 /* ListViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				291D39051A5EC5DE00F86206 /* PickupViewController.swift */,
 				291D39071A5EC61200F86206 /* ListViewController.swift */,
 				291D39091A5ED4C400F86206 /* FooterViewController.swift */,
+				29E688E21A60E7F1008EE317 /* ListViewDataSource.swift */,
 			);
 			path = SplitViewController;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29E688E31A60E7F1008EE317 /* ListViewDataSource.swift in Sources */,
 				291D39061A5EC5DE00F86206 /* PickupViewController.swift in Sources */,
 				291D38E81A5EBD9D00F86206 /* ViewController.swift in Sources */,
 				291D38E61A5EBD9D00F86206 /* SplitViewController.xcdatamodeld in Sources */,

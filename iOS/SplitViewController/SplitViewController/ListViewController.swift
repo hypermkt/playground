@@ -10,24 +10,18 @@ import Foundation
 import UIKit
 
 class ListViewController: UIViewController,
-    UITableViewDataSource,
+//    UITableViewDataSource,
     UITableViewDelegate
 {
     let cities = ["Tokyo", "Kanagawa", "Saitama", "Hokkaidou", "Aomori", "Iwate", "Akira", "Fukuoka", "Chiba", "Shiga", "Saga"]
+    var listViewDataSource : ListViewDataSource?
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
+        self.listViewDataSource = ListViewDataSource(cities: self.cities)
+        
         self.tableView.delegate = self
-        self.tableView.dataSource = self
-    }
-
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.cities.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
-        cell.textLabel.text = self.cities[indexPath.row]
-        return cell
+        self.tableView.dataSource = self.listViewDataSource
     }
 }
