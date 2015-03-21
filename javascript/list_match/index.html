@@ -1,0 +1,39 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+<!--
+$(function () {
+  $('input[type=text]').keyup(function() {
+      var keyword = $(this).val();
+
+      $('li').each(function (){
+          if ($(this).text().match(new RegExp(keyword, 'i'))) {
+            $(this).show();
+          } else {
+            $(this).hide();
+          }
+      });
+  });
+});
+// -->
+</script>
+</head>
+<body>
+<form>
+  <input type="text">
+</form>
+<!--絞込み対象キーワード-->
+<ul>
+  <li>福岡</li>
+  <li>埼玉</li>
+  <li>東京</li>
+  <li>神奈川</li>
+  <li>北海道</li>
+  <li>青森</li>
+  <li>千葉</li>
+  <li>岡山</li>
+  <li>山形</li>
+</ul>
+</body>
+</html>
