@@ -14,6 +14,7 @@
 		294D35951AC6965C003EEA1F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 294D35941AC6965C003EEA1F /* Images.xcassets */; };
 		294D35981AC6965C003EEA1F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 294D35961AC6965C003EEA1F /* LaunchScreen.xib */; };
 		294D35A41AC6965D003EEA1F /* threadSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294D35A31AC6965D003EEA1F /* threadSampleTests.swift */; };
+		294D35AE1AC69ACD003EEA1F /* NSThreadEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294D35AD1AC69ACD003EEA1F /* NSThreadEx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		294D359D1AC6965D003EEA1F /* threadSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = threadSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		294D35A21AC6965D003EEA1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		294D35A31AC6965D003EEA1F /* threadSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = threadSampleTests.swift; sourceTree = "<group>"; };
+		294D35AD1AC69ACD003EEA1F /* NSThreadEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSThreadEx.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				294D358A1AC6965C003EEA1F /* AppDelegate.swift */,
 				294D358F1AC6965C003EEA1F /* ViewController.swift */,
 				294D35911AC6965C003EEA1F /* Main.storyboard */,
+				294D35AD1AC69ACD003EEA1F /* NSThreadEx.swift */,
 				294D35941AC6965C003EEA1F /* Images.xcassets */,
 				294D35961AC6965C003EEA1F /* LaunchScreen.xib */,
 				294D358C1AC6965C003EEA1F /* threadSample.xcdatamodeld */,
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				294D35901AC6965C003EEA1F /* ViewController.swift in Sources */,
+				294D35AE1AC69ACD003EEA1F /* NSThreadEx.swift in Sources */,
 				294D358B1AC6965C003EEA1F /* AppDelegate.swift in Sources */,
 				294D358E1AC6965C003EEA1F /* threadSample.xcdatamodeld in Sources */,
 			);
