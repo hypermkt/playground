@@ -1,0 +1,60 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "2c05a4d41527ab3cafc894a89b3e5dc7",
+    "packages": [
+        {
+            "name": "koala-framework/zendframework1",
+            "version": "v1.12.6-p2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/koala-framework/zendframework1.git",
+                "reference": "b3cfdccbb6ebcf962ee132050fab0038d143c556"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/koala-framework/zendframework1/zipball/b3cfdccbb6ebcf962ee132050fab0038d143c556",
+                "reference": "b3cfdccbb6ebcf962ee132050fab0038d143c556",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.11"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.12.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Zend_": "library/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "library/"
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Zend Framework 1",
+            "homepage": "http://framework.zend.com/",
+            "keywords": [
+                "ZF1",
+                "framework"
+            ],
+            "time": "2015-03-04 15:09:37"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "platform": [],
+    "platform-dev": []
+}

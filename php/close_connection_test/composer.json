@@ -1,0 +1,5 @@
+{
+    "require": {
+      "koala-framework/zendframework1" : "*"
+    }
+}
