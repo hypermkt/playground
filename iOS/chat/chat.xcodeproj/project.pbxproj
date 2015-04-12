@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2982FB281ADA4D9200298A3E /* Chat1Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2982FB271ADA4D9200298A3E /* Chat1Controller.swift */; };
 		29BBEA051ADA428300FF806C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BBEA041ADA428300FF806C /* AppDelegate.swift */; };
 		29BBEA081ADA428300FF806C /* chat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29BBEA061ADA428300FF806C /* chat.xcdatamodeld */; };
 		29BBEA0A1ADA428300FF806C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BBEA091ADA428300FF806C /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		0E737F0FEC0594475D5FA200 /* Pods-chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-chat/Pods-chat.release.xcconfig"; sourceTree = "<group>"; };
+		2982FB271ADA4D9200298A3E /* Chat1Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat1Controller.swift; sourceTree = "<group>"; };
 		29BBE9FF1ADA428300FF806C /* chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BBEA031ADA428300FF806C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29BBEA041ADA428300FF806C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				29BBEA061ADA428300FF806C /* chat.xcdatamodeld */,
 				29BBEA021ADA428300FF806C /* Supporting Files */,
 				29BBEA281ADA49A900FF806C /* Bridging-Header.h */,
+				2982FB271ADA4D9200298A3E /* Chat1Controller.swift */,
 			);
 			path = chat;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				29BBEA0A1ADA428300FF806C /* ViewController.swift in Sources */,
 				29BBEA051ADA428300FF806C /* AppDelegate.swift in Sources */,
 				29BBEA081ADA428300FF806C /* chat.xcdatamodeld in Sources */,
+				2982FB281ADA4D9200298A3E /* Chat1Controller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

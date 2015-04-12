@@ -7,4 +7,4 @@
 //
 
 #import <AMBubbleTableViewController/AMBubbleTableViewController.h>
-//#import "JSQMessagesViewController.h"
+#import <JSQMessagesViewController/JSQMessagesViewController.h>
