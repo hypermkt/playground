@@ -14,11 +14,26 @@ class Chat1Controller : AMBubbleTableViewController,
     AMBubbleTableDataSource
 
 {
+    let messages : Array<Dictionary<String, AnyObject>> = [
+        [
+            "message" : "hoge",
+            "type" : AMBubbleCellReceived
+        ]
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
         self.delegate = self
         self.dataSource = self
+        self.setTableStyle(AMBubbleTableStyleFlat)
+        
+        let options : NSDictionary = [
+            AMOptionsTimestampEachMessage : false, // 時刻を非表示
+            AMOptionsAvatarSize : 0, // アバターは利用しないため横幅を0にして非表示
+            AMOptionsBubbleTableBackground : UIColor(red:0.96, green:0.96, blue:0.96, alpha:1.0),
+        ];
+        self.setBubbleTableOptions(options)
     }
     
     // DataSource
