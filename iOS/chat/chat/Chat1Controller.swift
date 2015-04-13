@@ -14,43 +14,67 @@ class Chat1Controller : AMBubbleTableViewController,
     AMBubbleTableDataSource
 
 {
-    let messages : Array<Dictionary<String, AnyObject>> = [
+    let messages : Array<Dictionary<String, Any?>> = [
         [
-            "message" : "hoge",
+            "name" : "God",
+            "message" : "received message",
             "type" : AMBubbleCellReceived
-        ]
+        ],
+        [
+            "name" : "hinashiki",
+            "message" : "sent message",
+            "type" : AMBubbleCellReceived
+        ],
+        [
+            "name" : "チッピー",
+            "message" : "sent message",
+            "type" : AMBubbleCellReceived
+        ],
+        [
+            "name" : "バーチー",
+            "message" : "sent message",
+            "type" : AMBubbleCellSent
+        ],
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSLog("\(self.messages)")
     
         self.delegate = self
         self.dataSource = self
         self.setTableStyle(AMBubbleTableStyleFlat)
-        
+       
+        let sendButton = UIImage(named: "buttonSendFlat.png")
         let options : NSDictionary = [
             AMOptionsTimestampEachMessage : false, // 時刻を非表示
             AMOptionsAvatarSize : 0, // アバターは利用しないため横幅を0にして非表示
-            AMOptionsBubbleTableBackground : UIColor(red:0.96, green:0.96, blue:0.96, alpha:1.0),
+            AMOptionsAccessorySize : 10, // 縦幅
+            AMOptionsImageButton : sendButton!,
+            AMOptionsImageBar : sendButton!
         ];
         self.setBubbleTableOptions(options)
     }
     
     // DataSource
     func numberOfRows() -> Int {
-        return 10
+        return self.messages.count
     }
     
     func cellTypeForRowAtIndexPath(indexPath: NSIndexPath!) -> AMBubbleCellType {
-        return AMBubbleCellReceived
+        return self.messages[indexPath.row]["type"] as AMBubbleCellType
     }
     
     func textForRowAtIndexPath(indexPath: NSIndexPath!) -> String! {
-        return "あいうえお、かきっく"
+        return self.messages[indexPath.row]["message"] as String!
     }
 
     func timestampForRowAtIndexPath(indexPath: NSIndexPath!) -> NSDate! {
         return NSDate()
+    }
+    
+    func usernameForRowAtIndexPath(indexPath: NSIndexPath!) -> String! {
+        return self.messages[indexPath.row]["name"] as String!
     }
     
     // Delegate
