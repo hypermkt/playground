@@ -1,0 +1,46 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'update', '-g', 'bower' ]
+2 info using npm@2.1.14
+3 info using node@v0.10.12
+4 silly mapToRegistry name bower
+5 silly mapToRegistry using default registry
+6 silly mapToRegistry registry https://registry.npmjs.org/
+7 silly mapToRegistry uri https://registry.npmjs.org/bower
+8 verbose request uri https://registry.npmjs.org/bower
+9 verbose request no auth needed
+10 info attempt registry request try #1 at 12:41:02
+11 verbose request id 1dd53689e1f79d7a
+12 verbose etag "7R9FZWXTT6ODL83S51HDX9FJ7"
+13 http request GET https://registry.npmjs.org/bower
+14 http 304 https://registry.npmjs.org/bower
+15 silly get cb [ 304,
+15 silly get   { date: 'Mon, 04 May 2015 03:41:02 GMT',
+15 silly get     via: '1.1 varnish',
+15 silly get     'last-modified': 'Mon, 04 May 2015 03:26:16 GMT',
+15 silly get     'cache-control': 'max-age=60',
+15 silly get     etag: '"7R9FZWXTT6ODL83S51HDX9FJ7"',
+15 silly get     age: '15',
+15 silly get     connection: 'keep-alive',
+15 silly get     'x-served-by': 'cache-nrt6128-NRT',
+15 silly get     'x-cache': 'HIT',
+15 silly get     'x-cache-hits': '24',
+15 silly get     'x-timer': 'S1430710862.589774,VS0,VE0',
+15 silly get     vary: 'Accept' } ]
+16 verbose etag https://registry.npmjs.org/bower from cache
+17 verbose type called_on_non_object
+18 verbose stack TypeError: Object.keys called on non-object
+18 verbose stack     at Function.keys (native)
+18 verbose stack     at unmarkExtraneous (/usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:362:10)
+18 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:137:5
+18 verbose stack     at next (/usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:185:14)
+18 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:169:14
+18 verbose stack     at Object.oncomplete (evalmachine.<anonymous>:107:15)
+19 verbose cwd /Users/hypermkt/work/hypermkt/javascript/memo20150504
+20 error Darwin 14.1.0
+21 error argv "node" "/usr/local/bin/npm" "update" "-g" "bower"
+22 error node v0.10.12
+23 error npm  v2.1.14
+24 error Object.keys called on non-object
+25 error If you need help, you may report this error at:
+25 error     <http://github.com/npm/npm/issues>
+26 verbose exit [ 1, true ]

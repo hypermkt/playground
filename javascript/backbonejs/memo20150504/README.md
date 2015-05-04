@@ -1,0 +1,5 @@
+## Usage
+
+```sh
+bower install
+```

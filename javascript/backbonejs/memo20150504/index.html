@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script src="./bower_components/jquery/dist/jquery.js"></script>
+  <script src="./bower_components/underscore/underscore.js"></script>
+  <script src="./bower_components/backbone/backbone.js"></script>
+  <script src="./bower_components/backbone.localStorage/backbone.localStorage.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/model.js"></script>
+  <script src="./js/container.js"></script>
+  <script src="./js/note_list_item.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+  <div id="header">
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <span class="navbar-brand">
+            <a href="./index.html">Note Application Example</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="main" class="container">
+    <div id="header-container"></div>
+    <div id="main" class="container"></div>
+  </div>
+
+  <script type="text/template" id="noteListView-template">
+    <thead>
+      <th class="col-md-2" colspan="2"></th>
+    </thead>
+    <tbody class="js-noteListItemView-container"></tbody>
+  </script>
+  <script type="text/template" id="noteListItemView-template">
+    <td>
+      <a href="#"><%= title %></a>
+    </td>
+    <td>
+      <div class="text-right">
+        <a href="#" class="btn btn-default btn-sm js-edit">
+          <span class="glyphicon glyphicon-edit"></span>
+          Edit
+        </a>
+        <a href="#" class="btn btn-danger btn-sm js-delete">
+          <span class"glyphicon glyphicon-remove"></span>
+          Delete
+        </a>
+      </div>
+    </td>
+  </script>
+</body>
+</html>
