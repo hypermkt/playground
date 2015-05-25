@@ -8,6 +8,13 @@
 </head>
 <body>
 
+<% if user_signed_in? %>
+  Logged in as <%= current_user.email %>
+  <%= link_to 'ログアウト', destroy_user_session_path, :method => :delete %>
+<% else %>
+  <%= link_to 'ログイン', new_user_session_path, :method => :get %>
+<% end %>
+
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
