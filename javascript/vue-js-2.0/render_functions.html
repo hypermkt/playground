@@ -3,11 +3,30 @@
 <body>
 
 <div id="app">
-  {{ message }}
+  <anchored-heading :level="1">Hello world!</anchored-heading>
+  <anchored-heading :level="2">Hello world!</anchored-heading>
+  <anchored-heading :level="3">Hello world!</anchored-heading>
+  <anchored-heading :level="4">Hello world!</anchored-heading>
+  <anchored-heading :level="5">Hello world!</anchored-heading>
 </div>
 
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/vue/2.0.0-rc.6/vue.min.js"></script>
 <script type="text/javascript">
+
+Vue.component('anchored-heading', {
+  render: function(createElement) {
+    console.log(this.$slots);
+    return createElement(
+      'h' + this.level,
+      this.$slots.default
+    )
+  },
+  props: {
+    level: Number,
+    required: true
+  }
+});
+
 new Vue({
   el: '#app',
   data: {
