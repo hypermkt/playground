@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="app">
+  <app>
+  </app>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+<script type="text/javascript">
+
+var layoutTpl = `
+<div>
+  <app-header></app-header>
+  <app-container>
+    <div slot="content2">こんばんわ</div>
+    <div slot="content1">こんにちわ</div>
+  </app-container>
+
+  <app-container>
+    <div slot="content1">Good Afternoon</div>
+    <div slot="content2">Good Evening</div>
+  </app-container>
+</div>
+`;
+
+var headerTpl = `
+<header>
+<p>テストサイトのヘッダー</p>
+</header>
+`;
+
+var containerTpl = `
+  <p>コンテナー</p>
+  <slot name="content1"></slot>
+  <slot name="content2"></slot>
+`;
+
+Vue.component('app-header', {
+  template: headerTpl
+});
+
+Vue.component('app-container', {
+  template: containerTpl
+});
+
+Vue.component('app', {
+  template: layoutTpl
+});
+
+new Vue({
+  el: '#app'
+});
+</script>
+
+</body>
+</html>
