@@ -12,6 +12,7 @@ Capybara.register_driver :poltergeist do |app|
     app,
     # SSLエラーを無視する
     phantomjs_options: ['--ignore-ssl-errors=yes'],
+    js_errors: false,
     debug: false,
     :timeout => 300
   )
@@ -23,5 +24,5 @@ Capybara.javascript_driver = :poltergeist
 Capybara.configure do |config|
   config.run_server = false
   config.default_driver = :poltergeist
-  config.app_host = 'https://goope.jp/'
+  config.app_host = 'http://search.yahoo.co.jp/'
 end
