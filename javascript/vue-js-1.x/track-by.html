@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+.bg-success {
+	background-color:blue;
+}
+</style>
+</head>
+<body>
+
+<div id="app">
+
+<div class="container well">
+  <p>without <code>track-by=id</code></p>
+  <ul>
+    <li v-for="item in items">
+			<a @click="changeState(item)" v-bind:class="{ 'bg-success': item.isClicked }" >{{item.id}}. {{item.name}}</a>
+		</li>
+  </ul>
+  <p>with <code>track-by=id</code></p>
+  <ul>
+    <li v-for="item in items" track-by="id">
+			<a @click="changeState(item)" v-bind:class="{ 'bg-success': item.isClicked }" >{{item.id}}. {{item.name}}</a>
+		</li>
+		</li>
+  </ul>
+  <p>Click the item to set the background and then
+    <button @click="setData" class="btn btn-primary">Roll Data</button>
+  </p>
+</div>
+
+
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+<script type="text/javascript">
+
+new Vue({
+  el: '#app',
+	data: {
+		items: [
+			{
+				id: 1,
+				name: 'foo',
+				isClicked: false
+			},
+			{
+				id: 2,
+				name: 'bar',
+				isClicked: false
+			},
+				{
+				id: 3,
+				name: 'baz',
+				isClicked: false
+			},
+			{
+				id: 4,
+				name: 'qux',
+				isClicked: false
+			}
+		]
+	},
+	methods: {
+		changeState: function(item) {
+			item.isClicked = true;
+		},
+		setData() {
+      var item = this.items.shift()
+      this.items.push({
+        id: item.id,
+        name: `new ${item.name}`,
+				isClicked: false
+      })
+    }
+	}
+});
+</script>
+
+</body>
+</html>
