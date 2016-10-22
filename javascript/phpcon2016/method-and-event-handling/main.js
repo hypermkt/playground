@@ -13,7 +13,7 @@ new Vue({
   },
   // Vue インスタンスに組み込まれるメソッド宣言箇所
   methods: {
-    osu: function() {
+    push: function() {
       this.message = '訴えてやる！';
     }
   }
