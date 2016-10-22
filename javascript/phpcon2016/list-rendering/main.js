@@ -2,11 +2,11 @@
 new Vue({
   el: '#app',
   data: {
-    rankings: [
-      { title: 'Hoge' },
-      { title: 'Fuga' },
-      { title: 'Bar' },
-      { title: 'Foo' }
+    items: [
+      { title: 'PHP' },
+      { title: 'Cofference2016' },
+      { title: '2016年11月3日（木）' },
+      { title: '大田区産業プラザ PiO' }
     ]
   }
 });
