@@ -2,11 +2,11 @@
 new Vue({
   el: '#app',
   data: {
-    isClicked: false
+    isHandRaised: false
   },
   methods:  {
-    oreyaru: function() {
-      this.isClicked = true;
+    raiseHand: function() {
+      this.isHandRaised = true;
     }
   }
 });
