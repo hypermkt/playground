@@ -1,0 +1,14 @@
+{
+  "name": "server-side-rendering",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.14.0",
+    "vue": "^2.0.3",
+    "vue-server-renderer": "^2.0.3"
+  }
+}
