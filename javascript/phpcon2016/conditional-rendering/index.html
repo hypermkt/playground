@@ -5,10 +5,12 @@
 </head>
 <body>
   <div id="app">
-    お前やらないの?じゃあ俺がやるよ!<br />
-    いやここは俺がやるよ! <br />
-    <button v-on:click="raiseHand">・・・じゃあ俺がやるよ。</button>
     <p v-if="isHandRaised">どうぞどうぞ</p> 
+    <p v-else>
+      お前やらないの?じゃあ俺がやるよ!<br />
+      いやここは俺がやるよ! <br />
+      <button v-on:click="raiseHand">・・・じゃあ俺がやるよ。</button>
+    </p>
   </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
   <script type="text/javascript" src="main.js"></script>
