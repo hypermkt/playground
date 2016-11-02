@@ -2,11 +2,11 @@
 new Vue({
   el: '#app',
   data: {
-    isApplied: false
+    isHandRaised: false
   },
   methods:  {
-    apply: function() {
-      this.isApplied = true;
+    raiseHand: function() {
+      this.isHandRaised = true;
     }
   }
 });
