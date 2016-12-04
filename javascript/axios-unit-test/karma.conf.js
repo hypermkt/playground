@@ -11,6 +11,7 @@ module.exports = function(config) {
     reporters: ['progress'],
     colors: true,
     browsers: ['PhantomJS'],
-    singleRun: true
+    singleRun: true,
+    reporters: ["spec"]
   })
 }
