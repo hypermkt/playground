@@ -1,7 +1,7 @@
 <?php
 
 // ファイルアップロード
-if(is_uploaded_file($_FILES['file']['tmp_name'])){
+if(isset($_FILES['file']['tmp_name']) && is_uploaded_file($_FILES['file']['tmp_name'])){
   $fileName = uniqid() . '.jpg';
   move_uploaded_file($_FILES['file']['tmp_name'], './upload_images/' . $fileName);
 }
@@ -26,7 +26,7 @@ if(is_uploaded_file($_FILES['file']['tmp_name'])){
 
     <?php
     foreach (glob("upload_images/*.jpg") as $filename) {
-      echo "<img src='{$filename}'><br />";
+      echo "<img src='{$filename}' width='100'><br />";
     }
     ?>
 </div>
