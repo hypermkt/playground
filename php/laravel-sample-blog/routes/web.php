@@ -11,6 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+//
+//Route::get('/', function () {
+//    return view('posts.index');
+//});
+
+Route::get('/', 'PostsController@index');
+Route::get('/posts/create', 'PostsController@create');
+Route::get('/posts/{id}/edit', 'PostsController@edit');
+Route::get('/posts/{id}', 'PostsController@show');
+Route::post('/posts', 'PostsController@store');
+Route::patch('/posts/{id}', 'PostsController@update');
+Route::delete('/posts/{id}', 'PostsController@destroy');
+
+
+Route::post('/posts/{postId}/comments', 'CommentsController@store');
