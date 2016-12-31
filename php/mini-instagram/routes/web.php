@@ -17,3 +17,5 @@ Route::post('/posts/store', 'PostsController@store');
 Route::delete('/posts/{id}', 'PostsController@destroy');
 
 Route::post('/comments/{id}/store', 'CommentsController@store');
+Route::delete('/comments/{id}', 'CommentsController@destroy');
+

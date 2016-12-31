@@ -12,7 +12,13 @@
     <p><img src="{{ Storage::url($post->image_path) }}"></p>
 
     @forelse ($post->comments as $comment)
-        <p>{{ $comment->body }}</p>
+        <p>{{ $comment->body }}
+            <form method="post" action="{{ action('CommentsController@destroy', $comment->id) }}">
+            {{ csrf_field() }}
+            {{ method_field('delete') }}
+            <input type="submit" value="[x]">
+            </form>
+        </p>
     @empty
         no comment
     @endforelse
