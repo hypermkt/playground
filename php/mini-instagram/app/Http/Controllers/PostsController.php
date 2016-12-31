@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 use App\Post;
 
 class PostsController extends Controller
@@ -25,12 +26,19 @@ class PostsController extends Controller
     {
         // ref: https://manablog.org/laravel-image-manipulation/
         if ($request->hasFile('fileName')) {
+            $image = Image::make($request->fileName->path());
+
             // 画像をファイル保存
-            $path = $request->fileName->store('images', 'public');
+            $filePath = 'images/' . uniqid();
+
+            // ref: http://image.intervention.io/api/resize
+            $image->resize(300, null, function($constraint) {
+                $constraint->aspectRatio();
+            })->save(storage_path('app/public/' . $filePath));
 
             // ファイルパスをDBに保存
             $post = new Post();
-            $post->image_path = $path;
+            $post->image_path = $filePath;
             $post->save();
         }
 
