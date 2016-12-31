@@ -8,6 +8,7 @@
 @forelse ($posts as $post)
 
 <div>
+    {{ $post->created_at->diffForHumans() }}
     <img src="{{ Storage::url($post->image_path) }}">
 
     <form method="post" action="{{ action('PostsController@destroy', $post->id) }}">
