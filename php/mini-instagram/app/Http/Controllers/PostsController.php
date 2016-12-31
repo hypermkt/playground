@@ -44,4 +44,18 @@ class PostsController extends Controller
 
         return redirect('/');
     }
+
+    public function destroy($id)
+    {
+        // DBから削除
+        $post = Post::findOrFail($id);
+
+        // Stroageから削除
+        $disk = Storage::disk('public');
+        $disk->delete($post->image_path);
+
+        $post->delete();
+
+        return redirect('/');
+    }
 }
