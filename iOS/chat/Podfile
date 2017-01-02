@@ -1,0 +1,12 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+target 'chat' do
+  pod 'AMBubbleTableViewController'
+  pod 'JSQMessagesViewController'
+end
+
+target 'chatTests' do
+
+end
+

@@ -1,0 +1,16 @@
+PODS:
+  - AMBubbleTableViewController (0.5.4)
+  - JSQMessagesViewController (7.0.0):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
+
+DEPENDENCIES:
+  - AMBubbleTableViewController
+  - JSQMessagesViewController
+
+SPEC CHECKSUMS:
+  AMBubbleTableViewController: f4426cd8d646fbe4ec5f0d821857cca62c2792b2
+  JSQMessagesViewController: 9fd7e9ac96e9fc91f2deca86928e2cc916aeebaa
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+
+COCOAPODS: 0.36.3
