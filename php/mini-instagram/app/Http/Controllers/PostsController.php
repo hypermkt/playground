@@ -33,7 +33,7 @@ class PostsController extends Controller
             $filePath = 'images/' . uniqid();
 
             // ref: http://image.intervention.io/api/resize
-            $image->resize(300, null, function($constraint) {
+            $image->resize(600, null, function($constraint) {
                 $constraint->aspectRatio();
             })->save(storage_path('app/public/' . $filePath));
 
