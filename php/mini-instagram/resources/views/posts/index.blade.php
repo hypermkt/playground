@@ -11,6 +11,13 @@
 
     <img src="{{ Storage::url($post->image_path) }}">
 
+    <p>いいね！ {{ $post->likeCount() }}件</p>
+
+    <form method="post" action="{{ action('LikesController@store', $post->id) }}">
+        {{ csrf_field() }}
+        <input type="submit" class="btn btn-info" value="いいね">
+    </form>
+
     <form method="post" action="{{ action('PostsController@destroy', $post->id) }}">
         {{ csrf_field() }}
         {{ method_field('delete') }}
