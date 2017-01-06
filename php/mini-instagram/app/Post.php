@@ -17,8 +17,8 @@ class Post extends Model
         return $this->hasMany('App\Like');
     }
 
-    public function likeCount()
+    public function likeCount($postId)
     {
-        return DB::table('likes')->where('post_id', 25)->count();
+        return DB::table('likes')->where('post_id', $postId)->count();
     }
 }
