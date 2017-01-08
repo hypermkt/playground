@@ -18,6 +18,7 @@ require('laravel-elixir-vue-2');
 elixir.config.sourcemaps = false;
 
 elixir(mix => {
-    mix.sass('app.scss')
-       .webpack('app.js');
+  // scriptsメソッドで指定ファイルを結合できる。ピリオドからの場合はアップルート直下からの相対パスとなる。結果のJavaScriptは public/js/all.jsに出力される。
+  // ref: https://readouble.com/laravel/5.3/ja/elixir.html
+  mix.scripts(['./node_modules/jquery/dist/jquery.js']);
 });
