@@ -13,6 +13,10 @@ require('laravel-elixir-vue-2');
  |
  */
 
+// ソースマップはデバッグ用なので作成を無効にする
+// ref: https://laravel.com/docs/5.3/elixir
+elixir.config.sourcemaps = false;
+
 elixir(mix => {
     mix.sass('app.scss')
        .webpack('app.js');
