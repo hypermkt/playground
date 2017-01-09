@@ -11,9 +11,9 @@
 
     <img src="{{ Storage::url($post->image_path) }}">
 
-    <p>いいね！ <span class="like_count{{ $post->id }}">{{ $post->likeCount($post->id) }}</span>件</p>
+    <p>いいね！ <span class="like_count{{ $post->id }}">{{ $post->like_count }}</span>件</p>
 
-    <form method="post" action="{{ action('LikesController@store', $post->id) }}">
+    <form method="post" action="{{ action('PostsController@like', $post->id) }}">
         {{ csrf_field() }}
         <input type="button" class="btn btn-info like-btn" data-post-id="{{ $post->id }}" value="いいね">
     </form>

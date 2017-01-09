@@ -14,6 +14,7 @@
 Route::get('/', 'PostsController@index');
 Route::get('/posts/create', 'PostsController@create');
 Route::post('/posts/store', 'PostsController@store');
+Route::post('/posts/{id}/like', 'PostsController@like');
 Route::delete('/posts/{id}', 'PostsController@destroy');
 
 Route::post('/comments/{id}/store', 'CommentsController@store');

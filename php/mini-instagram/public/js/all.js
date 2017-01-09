@@ -10230,7 +10230,7 @@ $(function(){
             }
         });
 
-        var url = '/likes/' + postId + '/store';
+        var url = '/posts/' + postId + '/like';
         $.post({
             url: url,
             dataType: 'json'

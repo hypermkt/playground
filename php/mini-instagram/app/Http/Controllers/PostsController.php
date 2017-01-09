@@ -46,6 +46,16 @@ class PostsController extends Controller
         return redirect('/');
     }
 
+    public function like(Request $request, $postId)
+    {
+        $post = Post::find($postId);
+        $post->increment('like_count');
+
+        return response()->json([
+            'like_count' => $post->like_count
+        ]);
+    }
+
     public function destroy($id)
     {
         // DBから削除
