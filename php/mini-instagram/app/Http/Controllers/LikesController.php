@@ -15,6 +15,8 @@ class LikesController extends Controller
         $post = Post::findOrFail($postId);
         $post->likes()->save($like);
 
-        return redirect('/');
+        return response()->json([
+            'like_count' => Like::where('post_id', $postId)->count()
+        ]);
     }
 }

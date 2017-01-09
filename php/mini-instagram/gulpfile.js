@@ -20,5 +20,5 @@ elixir.config.sourcemaps = false;
 elixir(mix => {
   // scriptsメソッドで指定ファイルを結合できる。ピリオドからの場合はアップルート直下からの相対パスとなる。結果のJavaScriptは public/js/all.jsに出力される。
   // ref: https://readouble.com/laravel/5.3/ja/elixir.html
-  mix.scripts(['./node_modules/jquery/dist/jquery.js']);
+  mix.scripts(['./node_modules/jquery/dist/jquery.js', 'main.js']);
 });
