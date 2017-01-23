@@ -1,0 +1,13 @@
+{
+    "name": "hypermkt/html_template_it",
+    "repositories": [
+      {
+        "type": "pear",
+        "url": "https://pear.php.net"
+      }
+    ],
+    "require": {
+        "pear/pear": "dev-master",
+        "pear-pear.php.net/HTML_Template_Sigma": "^1.3"
+    }
+}
