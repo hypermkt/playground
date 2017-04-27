@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  db:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.postgres
+  php-fpm:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.php-fpm
+    volumes:
+      - ./public/:/var/www/html
+    links:
+      - db

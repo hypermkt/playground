@@ -1,0 +1,5 @@
+FROM php:7.1.4-fpm
+
+# 公開するポート番号
+# http://docs.docker.jp/engine/reference/builder.html#env
+EXPOSE 80
