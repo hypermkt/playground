@@ -13,3 +13,13 @@ services:
       - ./public/:/var/www/html
     links:
       - db
+  web:
+    ports:
+      - "80:80"
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.nginx
+    volumes:
+      - ./public/:/var/www/html
+    links:
+      - db
