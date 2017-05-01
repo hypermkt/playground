@@ -4,6 +4,4 @@ RUN apt-get -qq update \
     && apt-get -qq install libxml2-dev libpq-dev \
     && docker-php-ext-install pdo xml pgsql
 
-# 公開するポート番号
-# http://docs.docker.jp/engine/reference/builder.html#env
-EXPOSE 80
+COPY php-fpm/www.conf /etc/php-fpm.d/www.conf

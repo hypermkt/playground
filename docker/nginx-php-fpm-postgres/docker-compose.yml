@@ -1,18 +1,6 @@
 version: '2'
 
 services:
-  db:
-    build:
-      context: ./docker
-      dockerfile: Dockerfile.postgres
-  php-fpm:
-    build:
-      context: ./docker
-      dockerfile: Dockerfile.php-fpm
-    volumes:
-      - ./public/:/var/www/html
-    links:
-      - db
   web:
     ports:
       - "80:80"
@@ -23,3 +11,18 @@ services:
       - ./public/:/var/www/html
     links:
       - db
+      - php-fpm
+
+  php-fpm:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.php-fpm
+    volumes:
+      - ./public/:/var/www/html
+    links:
+      - db
+
+  db:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.postgres
