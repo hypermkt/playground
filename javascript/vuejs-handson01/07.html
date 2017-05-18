@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style type="text/css">
+<!--
+.big_font { font-size: 50px; }
+-->
+  </style>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <span v-bind:class="{ big_font: font_flag }" />Hello World</span>
+      <button v-on:click="change">Change font size bigger!</button>
+    </ul>
+  </div>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        font_flag: false
+      },
+      methods: {
+        change: function() {
+          this.font_flag = true;
+        }
+      }
+    })
+  </script>
+</body>
+</html>
