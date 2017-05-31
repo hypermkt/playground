@@ -1,0 +1,13 @@
+{
+  "short_name": "PWA",
+  "name": "Progressive Web App Sample",
+  "icons": [
+    {
+      "src": "icon-4x.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone"
+}
