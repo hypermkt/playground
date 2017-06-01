@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Progressive Web App Sample</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="">
+<link rel="manifest" href="/manifest.json">
+<script>
+window.addEventListener('load', function() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register("/sw.js")
+      .then(function(registration) {
+        return registration.pushManager.getSubscription().then(function(subscription) {
+          if (subscription) {
+            return subscription
+          }
+          return registration.pushManager.subscribe({
+            userVisibleOnly: true
+          })
+        })
+      }).then(function(subscription) {
+        console.log("pushManager endpoint:", subscription.endpoint) 
+      }).catch(function(error) {
+        console.warn("serviceWorker error:", error)
+      })
+  }
+});
+</script>
+</head>
+<body>
+</body>
+</html>

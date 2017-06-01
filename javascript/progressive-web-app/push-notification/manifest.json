@@ -1,0 +1,14 @@
+{
+  "short_name": "PWA",
+  "name": "Progressive Web App Sample",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+	"gcm_sender_id": "#{Get project number from Firebase setting page.}"
+}
