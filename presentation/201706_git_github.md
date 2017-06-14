@@ -1,5 +1,6 @@
 ## 人生から学ぶGitとGitHub
 
+### 講義
 * この資料はGitとGitHub未経験者が、これらツールの概念を学ぶための資料です
 * 今まで覚えたGit, GitHubの知識は忘れてください。あなたの人生の話をしましょう。
 	* あなたはいつ生まれましたか？
@@ -37,3 +38,21 @@
 * デザイナーになる人生は、成功することが分かったので、あなたの本当の人生（masterブランチ)に適用（マージ）しましょう。
 * GitとGitHubは、幸せな人生を送るための道具です。正しく使って悔いの無い人生にしましょう。
 * 以上
+
+### ハンズオン
+
+#### 初期設定
+```sh
+git config --global user.name "YOUR NAME"
+git config --global user.email "YOUR EMAIL ADDRESS"
+```
+
+#### コマンド
+```sh
+* ブランチを作成する git branch ブランチ名
+* ブランチを削除する git branch -D ブランチ名
+* ブランチ一覧を表示する git branch
+* ブランチを切り替える git checkout ブランチ名
+* コミットする git commit
+* プッシュする git push origin ブランチ名
+```
