@@ -42,17 +42,27 @@
 ### ハンズオン
 
 #### 初期設定
+名前、メールアドレスを設定する
 ```sh
 git config --global user.name "YOUR NAME"
 git config --global user.email "YOUR EMAIL ADDRESS"
 ```
 
+設定内容を確認する
+```sh
+git config --list
+```
+
 #### コマンド
 ```sh
+* 変更されたファイルの一覧を表示したい git status
+* 変更されたファイルの差分を知りたい git diff
+* ファイルやディレクトリをインデックスに登録したい git add <filename or directory name>
+* インデックスに追加されたファイルをコミットしたい git commit
+* コミットのログを見たい git log
 * ブランチを作成する git branch ブランチ名
 * ブランチを削除する git branch -D ブランチ名
 * ブランチ一覧を表示する git branch
 * ブランチを切り替える git checkout ブランチ名
-* コミットする git commit
 * プッシュする git push origin ブランチ名
 ```
