@@ -138,10 +138,11 @@ describe('avoriaz test', () => {
       const div = wrapper.find('div')[0]
       expect(div.is('div')).to.be.eql(true)
 
-      // 子孫要素を指定できる
+      // 子孫要素指定
       const img1 = wrapper.find('div img')[0]
       expect(img1.is('img')).to.be.eql(true)
 
+      // 子要素指定
       const img2 = wrapper.find('div > img')[0]
       expect(img2.is('img')).to.be.eql(true)
     })
@@ -180,6 +181,9 @@ describe('avoriaz test', () => {
 
       const src2 = wrapper.find('[src="http://vuejs.org/images/logo.png"]')[0]
       expect(src2.is('img')).to.be.eql(true)
+
+      const src3 = wrapper.find("[src='http://vuejs.org/images/logo.png']")[0]
+      expect(src3.is('img')).to.be.eql(true)
     })
   })
 })
