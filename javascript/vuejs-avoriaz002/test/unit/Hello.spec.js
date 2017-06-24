@@ -182,6 +182,7 @@ describe('avoriaz test', () => {
       const src2 = wrapper.find('[src="http://vuejs.org/images/logo.png"]')[0]
       expect(src2.is('img')).to.be.eql(true)
 
+      // ダブルコーテーション囲みでも問題ない
       const src3 = wrapper.find("[src='http://vuejs.org/images/logo.png']")[0]
       expect(src3.is('img')).to.be.eql(true)
     })
