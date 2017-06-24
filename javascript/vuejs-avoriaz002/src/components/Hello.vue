@@ -5,13 +5,21 @@
     <h2 class="subtitle">Essential Links</h2>
     <h2>Ecosystem</h2>
     <h3>nickname: {{ user.nickname }}</h3>
+    <child></child>
+    <hr />
+    <div align="center">2017(c) copyright</div>
   </div>
 </template>
 
 <script>
+import Child from './Child.vue'
+
 export default {
   name: 'hello',
   props: ['user'],
+  components: {
+    'child': Child
+  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

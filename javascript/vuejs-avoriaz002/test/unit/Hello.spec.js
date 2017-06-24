@@ -1,5 +1,5 @@
 import Hello from '../../src/components/Hello.vue'
-import { mount } from 'avoriaz'
+import { mount, shallow } from 'avoriaz'
 
 describe('avoriaz test', () => {
   describe('mount', () => {
@@ -124,6 +124,15 @@ describe('avoriaz test', () => {
       })
       expect(wrapper.vm.user.nickname).to.be.eql('John')
     })
+  })
+
+  describe('shallow', () => {
+    const wrapper = shallow(Hello, {
+      propsData: {
+        user: {nickname: 'John'}
+      }
+    })
+    expect(wrapper.isVueComponent).to.be.eql(true)
   })
 
   describe('selectors', () => {
