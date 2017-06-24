@@ -125,4 +125,61 @@ describe('avoriaz test', () => {
       expect(wrapper.vm.user.nickname).to.be.eql('John')
     })
   })
+
+  describe('selectors', () => {
+    it('tag selectors', () => {
+      const wrapper = mount(Hello, {
+        propsData: {
+          user: {nickname: 'John'}
+        }
+      })
+
+      // タグを指定する
+      const div = wrapper.find('div')[0]
+      expect(div.is('div')).to.be.eql(true)
+
+      // 子孫要素を指定できる
+      const img1 = wrapper.find('div img')[0]
+      expect(img1.is('img')).to.be.eql(true)
+
+      const img2 = wrapper.find('div > img')[0]
+      expect(img2.is('img')).to.be.eql(true)
+    })
+
+    it('id selectors', () => {
+      const wrapper = mount(Hello, {
+        propsData: {
+          user: {nickname: 'John'}
+        }
+      })
+
+      const hello = wrapper.find('#hello')[0]
+      expect(hello.is('div')).to.be.eql(true)
+    })
+
+    it('class selectors', () => {
+      const wrapper = mount(Hello, {
+        propsData: {
+          user: {nickname: 'John'}
+        }
+      })
+
+      const subtitle = wrapper.find('.subtitle')[0]
+      expect(subtitle.is('h2')).to.be.eql(true)
+    })
+
+    it('attribute selectors', () => {
+      const wrapper = mount(Hello, {
+        propsData: {
+          user: {nickname: 'John'}
+        }
+      })
+
+      const src1 = wrapper.find('[src]')[0]
+      expect(src1.is('img')).to.be.eql(true)
+
+      const src2 = wrapper.find('[src="http://vuejs.org/images/logo.png"]')[0]
+      expect(src2.is('img')).to.be.eql(true)
+    })
+  })
 })
