@@ -37,4 +37,10 @@ describe('Hello.vue', () => {
     input.trigger('input')
     expect(actions.input_number.calledOnce).to.be.eql(false)
   })
+
+   it('ボタンがクリックされたら、storeアクションのincrementが呼ばれる', () => {
+    const wrapper = mount(Hello, { store })
+    wrapper.find('button')[0].trigger('click')
+    expect(actions.increment.calledOnce).to.be.eql(true)
+  })
 })
