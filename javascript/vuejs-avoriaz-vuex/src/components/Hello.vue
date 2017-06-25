@@ -16,6 +16,10 @@
       <li><a href="https://github.com/vuejs/vueify" target="_blank">vueify</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <h2>Counter</h2>
+    Count: {{ this.$store.state.counter.count }}
+    <button v-on:click="increment()">Count Up</button>
+    <button v-on:click="decrement()">Count Down</button>
   </div>
 </template>
 
@@ -25,6 +29,14 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    increment () {
+      this.$store.dispatch('increment')
+    },
+    decrement () {
+      this.$store.dispatch('decrement')
     }
   }
 }
