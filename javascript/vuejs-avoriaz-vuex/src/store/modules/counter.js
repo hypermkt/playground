@@ -10,8 +10,8 @@ const actions = {
   increment (context) {
     context.commit(types.INCREMENT)
   },
-  decrement (context) {
-    context.commit(types.DECREMENT)
+  input_number (context, count) {
+    context.commit(types.INPUT_NUMBER, count)
   }
 }
 
@@ -20,8 +20,8 @@ const mutations = {
   [types.INCREMENT] (state) {
     state.count++
   },
-  [types.DECREMENT] (state) {
-    state.count--
+  [types.INPUT_NUMBER] (state, count) {
+    state.count = count
   }
 }
 
