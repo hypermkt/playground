@@ -5,6 +5,11 @@ const state = {
   count: 0
 }
 
+// ゲッター
+const getters = {
+  current_count: state => state.count
+}
+
 // アクション
 const actions = {
   increment (context) {
@@ -28,6 +33,7 @@ const mutations = {
 export default {
   state,
   actions,
+  getters,
   mutations
 }
 

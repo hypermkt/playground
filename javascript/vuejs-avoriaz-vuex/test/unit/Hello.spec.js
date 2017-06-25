@@ -8,39 +8,61 @@ import Hello from '../../src/components/Hello.vue'
 Vue.use(Vuex)
 
 describe('Hello.vue', () => {
-  let actions;
-  let store;
+  describe('Mocking Actions', () => {
+    let actions;
+    let store;
 
-  beforeEach(() => {
-    actions = {
-      increment: sinon.stub(),
-      input_number: sinon.stub(),
-    }
-    store = new Vuex.Store({
-      state: {},
-      actions
+    beforeEach(() => {
+      actions = {
+        increment: sinon.stub(),
+        input_number: sinon.stub(),
+      }
+      store = new Vuex.Store({
+        state: {},
+        actions
+      })
+    })
+
+    it('inputタグの数値が入力されinputイベントが発火したら、store アクションのinput_numberが呼ばれる', () => {
+      const wrapper = mount(Hello, { store })
+      const input = wrapper.find('input')[0]
+      input.element.value = 100
+      input.trigger('input')
+      expect(actions.input_number.calledOnce).to.be.eql(true)
+    })
+
+    it('inputタグの数値以外が入力されinputイベントが発火したら、store アクションのinput_numberが呼ばれない', () => {
+      const wrapper = mount(Hello, { store })
+      const input = wrapper.find('input')[0]
+      input.element.value = 'string'
+      input.trigger('input')
+      expect(actions.input_number.calledOnce).to.be.eql(false)
+    })
+
+    it('ボタンがクリックされたら、storeアクションのincrementが呼ばれる', () => {
+      const wrapper = mount(Hello, { store })
+      wrapper.find('button')[0].trigger('click')
+      expect(actions.increment.calledOnce).to.be.eql(true)
     })
   })
 
-  it('inputタグの数値が入力されinputイベントが発火したら、store アクションのinput_numberが呼ばれる', () => {
-    const wrapper = mount(Hello, { store })
-    const input = wrapper.find('input')[0]
-    input.element.value = 100
-    input.trigger('input')
-    expect(actions.input_number.calledOnce).to.be.eql(true)
-  })
+  describe('Mocking Getters', () => {
+    let getters;
+    let store;
 
-  it('inputタグの数値以外が入力されinputイベントが発火したら、store アクションのinput_numberが呼ばれない', () => {
-    const wrapper = mount(Hello, { store })
-    const input = wrapper.find('input')[0]
-    input.element.value = 'string'
-    input.trigger('input')
-    expect(actions.input_number.calledOnce).to.be.eql(false)
-  })
+    beforeEach(() => {
+      getters = {
+        current_count: () => 0
+      }
+      store = new Vuex.Store({
+        getters
+      })
+    })
 
-   it('ボタンがクリックされたら、storeアクションのincrementが呼ばれる', () => {
-    const wrapper = mount(Hello, { store })
-    wrapper.find('button')[0].trigger('click')
-    expect(actions.increment.calledOnce).to.be.eql(true)
+    it('h3内をレンダリングして、カウントが表示されている', () => {
+      const wrapper = mount(Hello, { store })
+      const h3 = wrapper.find('h3')[0]
+      expect(h3.text()).to.be.eql('Count: 0')
+    })
   })
 })
