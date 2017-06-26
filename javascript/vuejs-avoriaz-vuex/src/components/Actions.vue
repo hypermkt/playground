@@ -1,6 +1,6 @@
 <template>
     <div class="text-align-center">
-        <input type="text" v-model="name" @input="actionInput" />
+        <input type="text" v-model="animal_name" @input="actionInput" />
         <button @click="actionClick()">Click</button>
     </div>
 </template>
@@ -11,7 +11,7 @@
   export default{
     data () {
       return {
-        name: ''
+        animal_name: ''
       }
     },
     methods: {
@@ -19,8 +19,8 @@
         'actionClick',
       ]),
       actionInput() {
-        if (this.name === 'cat') {
-          this.$store.dispatch('actionInput', this.name);
+        if (this.animal_name === 'cat') {
+          this.$store.dispatch('actionInput', this.animal_name);
         }
       },
     },
