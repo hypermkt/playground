@@ -3,12 +3,12 @@ import Vuex from 'vuex'
 import { mount } from 'avoriaz'
 import sinon from 'sinon'
 import 'babel-polyfill' // Error: [vuex] vuex requires a Promise polyfill in this browser.対策
-import Hello from '../../src/components/Hello.vue'
+import Modules from '../../src/components/Modules.vue'
 import counter from '../../src/store/modules/counter'
 
 Vue.use(Vuex)
 
-describe('Hello.vue', () => {
+describe('Modules.vue', () => {
   describe('Mocking Actions', () => {
     let actions;
     let store;
@@ -25,7 +25,7 @@ describe('Hello.vue', () => {
     })
 
     it('inputタグの数値が入力されinputイベントが発火したら、store アクションのinput_numberが呼ばれる', () => {
-      const wrapper = mount(Hello, { store })
+      const wrapper = mount(Modules, { store })
       const input = wrapper.find('input')[0]
       input.element.value = 100
       input.trigger('input')
@@ -33,7 +33,7 @@ describe('Hello.vue', () => {
     })
 
     it('inputタグの数値以外が入力されinputイベントが発火したら、store アクションのinput_numberが呼ばれない', () => {
-      const wrapper = mount(Hello, { store })
+      const wrapper = mount(Modules, { store })
       const input = wrapper.find('input')[0]
       input.element.value = 'string'
       input.trigger('input')
@@ -41,7 +41,7 @@ describe('Hello.vue', () => {
     })
 
     it('ボタンがクリックされたら、storeアクションのincrementが呼ばれる', () => {
-      const wrapper = mount(Hello, { store })
+      const wrapper = mount(Modules, { store })
       wrapper.find('button')[0].trigger('click')
       expect(actions.increment.calledOnce).to.be.eql(true)
     })
@@ -61,7 +61,7 @@ describe('Hello.vue', () => {
     })
 
     it('h3内をレンダリングして、カウントが表示されている', () => {
-      const wrapper = mount(Hello, { store })
+      const wrapper = mount(Modules, { store })
       const h3 = wrapper.find('h3')[0]
       expect(h3.text()).to.be.eql('Count: 0')
     })
@@ -90,7 +90,7 @@ describe('Hello.vue', () => {
     })
 
     it('モジュールを利用した場合', () => {
-      const wrapper = mount(Hello, { store })
+      const wrapper = mount(Modules, { store })
       const button = wrapper.find('button')[0]
       button.trigger('click')
       expect(actions.increment.calledOnce).to.be.eql(true)

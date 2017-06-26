@@ -11,7 +11,6 @@
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
-  name: 'hello',
   data() {
     return {
       input_count: ''
