@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { mount } from 'avoriaz'
-import sinon from 'sinon'
 import 'babel-polyfill' // Error: [vuex] vuex requires a Promise polyfill in this browser.対策
 import Getters from '../../src/components/Getters.vue'
 
