@@ -74,9 +74,7 @@ describe('Modules.vue', () => {
 
     beforeEach(() => {
       state = {
-        counter: {
-          count: 0
-        }
+        count: 0
       }
       actions = {
         increment: sinon.stub(),
@@ -89,11 +87,17 @@ describe('Modules.vue', () => {
       })
     })
 
-    it('モジュールを利用した場合', () => {
+    it('Count upボタンをクリックすると、incrementアクションが呼ばれる', () => {
       const wrapper = mount(Modules, { store })
       const button = wrapper.find('button')[0]
       button.trigger('click')
       expect(actions.increment.calledOnce).to.be.eql(true)
+    })
+
+    it('Count upボタンをクリックする前は、カウント0である', () => {
+      const wrapper = mount(Modules, { store })
+      const h3 = wrapper.find('h3')[0]
+      expect(h3.text()).to.be.eql('Count: 0')
     })
   })
 })
