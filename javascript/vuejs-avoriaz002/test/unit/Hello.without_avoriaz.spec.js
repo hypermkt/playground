@@ -28,7 +28,7 @@ describe('Test without avoriaz', () => {
   })
 
   it('h3タグは、dataのmsgを利用して正しくレンダリングされているか', () => {
-    expect(vm.$el.querySelector('h3').textContent).to.be.eql('nickname: John')
+    expect(vm.$el.querySelector('p').textContent).to.be.eql('nickname: John')
   })
 
   it('user情報は、propsで正しく渡されているか', () => {

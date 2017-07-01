@@ -2,9 +2,8 @@
   <div id="hello">
     <img src="http://vuejs.org/images/logo.png">
     <h1>{{ msg }}</h1>
-    <h2 class="subtitle">Essential Links</h2>
-    <h2>Ecosystem</h2>
-    <h3>nickname: {{ user.nickname }}</h3>
+    <h2 class="subtitle">User</h2>
+    <p>nickname: {{ user.nickname }}</p>
     <child></child>
   </div>
 </template>

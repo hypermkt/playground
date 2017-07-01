@@ -25,7 +25,7 @@ describe('avoriaz test', () => {
     })
 
     it('find', () => {
-      expect(wrapper.find('h2').length).to.be.eql(2)
+      expect(wrapper.find('h2').length).to.be.eql(1)
       expect(wrapper.find('h2')[0].is('h2')).to.be.eql(true)
     })
 
@@ -56,7 +56,7 @@ describe('avoriaz test', () => {
     })
 
     it('propsData', () => {
-      expect(wrapper.find('h3')[0].text()).to.be.eql('nickname: John')
+      expect(wrapper.find('p')[0].text()).to.be.eql('nickname: John')
 
       // propsDataを使用すると「warning: functions returned by propsData() will not have this bound to the vue instance. Calling a propsData function that uses this will result in an error. You can access propsData functions by using the vue instance. e.g. to call a method function named propsDataFunc, call wrapper.vm.$props.propsDataFunc(). See https://github.com/eddyerburgh/avoriaz/issues/15」が表示されたので、wrapper.vmに変更
       expect(wrapper.propsData().user.nickname).to.be.eql('John')
