@@ -24,14 +24,14 @@ describe('Test without avoriaz', () => {
   })
 
   it('h1タグは、dataのmsgを利用して正しくレンダリングされているか', () => {
-      expect(vm.$el.querySelector('h1').textContent).to.be.eql('Welcome to Your Vue.js App')
+    expect(vm.$el.querySelector('h1').textContent).to.be.eql('Welcome to Your Vue.js App')
   })
 
   it('h3タグは、dataのmsgを利用して正しくレンダリングされているか', () => {
-      expect(vm.$el.querySelector('h3').textContent).to.be.eql('nickname: John')
+    expect(vm.$el.querySelector('h3').textContent).to.be.eql('nickname: John')
   })
 
   it('user情報は、propsで正しく渡されているか', () => {
-      expect(vm.$props.user.nickname).to.be.eql('John')
+    expect(vm.$props.user.nickname).to.be.eql('John')
   })
 })
