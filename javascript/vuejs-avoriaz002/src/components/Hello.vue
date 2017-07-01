@@ -6,8 +6,6 @@
     <h2>Ecosystem</h2>
     <h3>nickname: {{ user.nickname }}</h3>
     <child></child>
-    <hr />
-    <div align="center">2017(c) copyright</div>
   </div>
 </template>
 
