@@ -20,10 +20,8 @@ describe('avoriaz test', () => {
     })
 
     it('data', () => {
-      let msg = 'Hello World'
-      wrapper.setData({msg: msg})
-      expect(wrapper.find('h1')[0].text()).to.be.eql(msg)
-      expect(wrapper.data().msg).to.be.eql(msg)
+      expect(wrapper.find('h1')[0].text()).to.be.eql('Welcome to Your Vue.js App')
+      expect(wrapper.data().msg).to.be.eql('Welcome to Your Vue.js App')
     })
 
     it('find', () => {
@@ -64,7 +62,7 @@ describe('avoriaz test', () => {
       expect(wrapper.propsData().user.nickname).to.be.eql('John')
 
       // ref: https://eddyerburgh.gitbooks.io/avoriaz/content/api/mount/vm.html
-      // expect(wrapper.vm.user.nickname).to.be.eql('John')
+      expect(wrapper.vm.user.nickname).to.be.eql('John')
     })
 
     it('text', () => {
