@@ -65,14 +65,107 @@
     * DOMイベントトリガー
     * Shallow, Fullレンダリング
     * props, dataセット
-* jQueryライクなセレクター
+* 前提
+    * Karma + mocha + chai
+    * avoriaz v2.2
+* 基本的な使い方
+```js
+// Hello.vue
+<template>
+  <div>
+    <h1>{{ msg }}</h1>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+    }
+  }
+}
+</script>
+```
+
+```js
+// Hello.without_avoriaz.spec.js
+import Vue from 'vue'
+import Hello from '../../src/components/Hello.vue'
+
+describe('avoriaz無しのテストケース', () => {
+  it('h1タグは、dataのmsgを利用して正しくレンダリングされているか', () => {
+    const Constructor = Vue.extend(Hello)
+    const vm = new Constructor().$mount()
+    expect(vm.$el.querySelector('h1').textContent).to.be.eql('Welcome to Your Vue.js App')
+  })
+})
+```
+
+```js
+// Hello.with_avoriaz.spec.js
+import { mount } from 'avoriaz'
+import Hello from '../../src/components/Hello.vue'
+
+describe('avoriaz有りのテストケース', () => {
+  it('h1タグは、dataのmsgを利用して正しくレンダリングされているか', () => {
+    const wrapper = mount(Hello)
+    expect(wrapper.find('h1')[0].text()).to.be.eql('Welcome to Your Vue.js App')
+  })
+})
+```
+* 基本亭な組み合わせ
+    * mount
+        * フルレンダリングされたコンポーネントのラッパーを返す。
     * find
-* 簡単な例
-    * setProps, find, text
+        * jQueryライクなセレクタ: タグ, CSS, 属性, ID
+    * text
+        * ラッパーのテキストコンテンツを返す。 
 * Shallowレンダリング
-* Fullレンダリング
+    * 全ての子コンポーネントをスタブ化したVueコンポーネントのラッパーを返す。
+```html
+<template>
+  <div>
+    <h1>{{ msg }}</h1>
+    <child :foo="foo"></child>
+  </div>
+</template>
+
+<script>
+import Child from './Child2.vue'
+
+export default {
+  components: {
+    'child': Child
+  },
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App',
+      foo: { msg: 'Bar' }
+    }
+  }
+}
+</script>
+```
+
+```js
+import HelloWithChild from '../../src/components/HelloWithChild.vue'
+import { shallow } from 'avoriaz'
+
+describe('shallow', () => {
+  it('shallow', () => {
+    const wrapper = shallow(HelloWithChild)
+    expect(wrapper.find('h1')[0].text()).to.be.eql('Welcome to Your Vue.js App')
+
+    // childコンポーネントはコメントアウトに変換されている
+    expect(wrapper.html()).to.be.eql('<div><h1>Welcome to Your Vue.js App</h1> <!----></div>')
+  })
+})
+```
+* shallowレンダリングのメリット
+    * 対象のコンポーネントのテストにだけ集中できる
+    * テスト対象のコンポーネントが、親であればあるほどテストがしづらい
 * DOMイベントトリガー
-* Vuex
 * まとめ
     * vue-test-utilsは、開発中なので今後どうなるかまだ分からない。
     * avoriazを利用すれば、簡単にコンポーネントのテストが書けるようになる。
