@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="signup">Sign up</button>
+    Account: <input type="text" @input="checkAccount" >
   </div>
 </template>
 
@@ -14,8 +14,8 @@ export default {
     }
   },
   methods: {
-    signup: () => {
-      api.signup()
+    checkAccount: () => {
+      api.checkAccount()
     }
   }
 }

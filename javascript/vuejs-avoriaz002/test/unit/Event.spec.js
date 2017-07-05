@@ -11,27 +11,24 @@ describe('Event.vue', () => {
     stub.restore()
   });
 
-  it('ボタンが押されたら、APIが1回呼ばれる with avoriaz', () => {
-    stub = sinon.stub(api, 'signup')
+  it('文字列が入力されたら、APIが1回呼ばれる with avoriaz', () => {
+    stub = sinon.stub(api, 'checkAccount')
 
-    // buttonタグのclickイベントを発火させる
     const wrapper = mount(Event)
-    const button = wrapper.find('button')[0]
-    button.trigger('click')
+    wrapper.find('input')[0].trigger('input')
 
     expect(stub.calledOnce).to.be.true
   })
 
-  it('ボタンが押されたら、APIが1回呼ばれる without avoriaz', () => {
-    stub = sinon.stub(api, 'signup')
+  it('文字列が入力されたら、APIが1回呼ばれる without avoriaz', () => {
+    stub = sinon.stub(api, 'checkAccount')
 
-    // buttonタグのclickイベントを発火させる
     const Constructor = Vue.extend(Event)
     const vm = new Constructor().$mount()
-    const button = vm.$el.querySelector('button')
+    const input = vm.$el.querySelector('input')
     const event = document.createEvent('HTMLEvents')
-    event.initEvent('click', true, true)
-    button.dispatchEvent(event)
+    event.initEvent('input', true, true)
+    input.dispatchEvent(event)
 
     expect(stub.calledOnce).to.be.true
   })
