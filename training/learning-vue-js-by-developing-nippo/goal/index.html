@@ -6,6 +6,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
   <title>nippo</title>
+  <style type="text/css"> 
+    .fade-enter-active, .fade-leave-active {
+      transition: opacity 2s;
+      opacity: 1;
+    }
+
+    .fade-enter, .fade-leave-to {
+      opacity: 0;
+    }
+  </style>
 </head>
 <body>
 <div class="container" id="app">
@@ -35,20 +45,22 @@
     >編集</button>
   
   <h3 class="subtitle">日報一覧</h2>
-  <div class="card" style="padding: 10px;" v-for="(nippo, key) in nippoes">
-    <p>Date: {{nippo.date}} </p>
-    <p>Content: {{nippo.content}} </p>
-    <button
-      v-on:click="editNippo(nippo)"
-      class="button is-primary"
-      style="margin: 5px;"
-      >編集</button>
-    <button
-      v-on:click="deleteNippo(key)"
-      class="button is-warning"
-      style="margin: 5px;"
-      >削除</button>
-  </div>
+  <transition-group name="fade" tag="div">
+    <div class="card" style="padding: 10px;" v-for="(nippo, key) in nippoes" :key="nippo">
+      <p>Date: {{nippo.date}} </p>
+      <p>Content: {{nippo.content}} </p>
+      <button
+        v-on:click="editNippo(nippo)"
+        class="button is-primary"
+        style="margin: 5px;"
+        >編集</button>
+      <button
+        v-on:click="deleteNippo(key)"
+        class="button is-warning"
+        style="margin: 5px;"
+        >削除</button>
+    </div>
+  </transition-group>
 
   <div align="center">nippo</div>
 </div>

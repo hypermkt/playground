@@ -4,7 +4,7 @@ new Vue({
     mode: 'add',
     nippoCache: null,
     content: '', 
-    nippoes: [{date: '2017-10-24', content: 'あいうえお'}]
+    nippoes: []
   },
   computed: {
     today: function() {
@@ -15,6 +15,7 @@ new Vue({
     addNippo: function() {
       this.nippoes.unshift({ date: moment().format('YYYY-MM-DD'), content: this.content })
       this.content = ''
+      console.log(this.nippoes)
     },
     editNippo: function(nippo) {
       this.nippoCache = nippo
