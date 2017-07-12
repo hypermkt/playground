@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div id="app">
+    <ul>
+      Hello {{ message }}
+      <button v-on:click="say()" />say</button>
+    </ul>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: ''
+      },
+      methods: {
+        say: function() {
+          console.log("pushed");
+          this.message = 'world!';
+        }
+      }
+    })
+  </script>
+</body>
+</html>
