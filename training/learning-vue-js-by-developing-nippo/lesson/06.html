@@ -7,7 +7,7 @@
   <div id="app">
     <ul>
       <span v-if="display">top secret</span>
-      <button v-on:click="change()" />change</button>
+      <button v-on:click="change()" />open top secret</button>
     </ul>
   </div>
 
@@ -16,11 +16,11 @@
     var app = new Vue({
       el: '#app',
       data: {
-        display: true 
+        display: false
       },
       methods: {
         change: function() {
-          this.display = false;
+          this.display = true;
         }
       }
     })
