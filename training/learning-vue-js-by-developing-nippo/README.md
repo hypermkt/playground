@@ -16,3 +16,5 @@
 4. v-for
 5. methods, v-on:click
 6. v-if
+7. push
+8. Vue.delete
