@@ -6,11 +6,6 @@ new Vue({
     content: '', 
     nippoes: []
   },
-  computed: {
-    today: function() {
-      return moment().format('YYYY年MM月DD日');
-    }
-  },
   methods: {
     addNippo: function() {
       this.nippoes.unshift({ date: moment().format('YYYY-MM-DD'), content: this.content })
