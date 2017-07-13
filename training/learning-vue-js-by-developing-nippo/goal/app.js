@@ -4,12 +4,8 @@ new Vue({
     mode: 'add',
     nippoCache: null,
     content: '', 
-    nippoes: []
-  },
-  computed: {
-    today: function() {
-      return moment().format('YYYY年MM月DD日');
-    }
+    nippoes: [],
+    today: moment().format('YYYY年MM月DD日')
   },
   methods: {
     addNippo: function() {
