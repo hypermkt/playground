@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div id="app">
+      <input type="text" v-model="message">
+      <ul>
+        <li v-for="item in items">{{ item.message }}</li>
+      </ul>
+      <button v-on:click="submit">submit</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: '',
+        items: []
+      },
+      methods: {
+        submit: function() {
+          this.items.push({message: this.message})
+          this.message = ''
+        }
+      }
+    })
+  </script>
+</body>
+</html>
