@@ -4,17 +4,9 @@
 2. lessonディレクトリのサンプルコードを参考にVue.jsの文法をハンズオン形式で学ぶ
 3. 覚えた知識を利用して、日報アプリを書いてみる
 
-## 学ぶこと
-* el
-* data
-* computed
-* methods
-* v-on:click
-* v-if, v-else
-* v-for
-* v-model
-
 ## Vue.js入門ハンズオン
+lesson以下のサンプルコードを使用します。
+
 1. CDN読み込み, id指定
 2. el, data
 3. v-model
@@ -24,3 +16,5 @@
 7. push
 8. Vue.delete
 
+## 日報アプリ開発
+* template/index.htmlを土台に、goal/index.htmlの日報アプリを目指して実装してみてください。
