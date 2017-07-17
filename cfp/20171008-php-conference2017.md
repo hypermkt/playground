@@ -60,3 +60,4 @@ PHPを利用したウェブサイトの約66%は、セキュリティサポー�
 ### 参考
 * [登壇の可能性をあげる！カンファレンスプロポーザルの書き方のススメ \- builderscon::blog](http://blog.builderscon.io/entry/2017/05/09/090000)
 * [Usage Statistics and Market Share of PHP for Websites, July 2017](https://w3techs.com/technologies/details/pl-php/all/all)
+* [文字数カウント \- numMojiなんもじ（リアルタイム文字数計算チェック）](http://www.nummoji.kenjisugimoto.com/)
