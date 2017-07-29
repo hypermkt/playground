@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.0/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+  <title></title>
+</head>
+<body>
+
+  <div id="app">
+    <p>Vue2 + Official guide recommended</p>
+
+    <button v-on:click="sort('height')">Sort by height</button>
+    <button v-on:click="sort('weight')">Sort by weight</button>
+
+    <button v-on:click="filter('dog')">dog</button>
+    <button v-on:click="filter('cat')">cat</button>
+    <button v-on:click="filter('hamster')">hamster</button>
+
+    <button v-on:click="clear()">clear</button>
+    <table border="1">
+    <tr> 
+      <th>name</th>
+      <th>height</th>
+      <th>weight</th>
+    </tr> 
+    <tr v-for="animal in filterAndSort">
+      <td>{{ animal.name }}</td>
+      <td>{{ animal.height }} cm</td>
+      <td>{{ animal.weight }} g</td>
+    </tr> 
+    </table>
+  </div>
+<script>
+
+new Vue({
+  el: '#app',
+  computed: {
+    filterAndSort: function() {
+      return this.filteredAnimals(this.orderedAnimals(this.animals))
+    }
+  },
+  data () {
+    return {
+      type: 'all',
+      sortType: 'none',
+      // height = センチメーター, weight = グラム
+      animals: [
+        { name: '犬001', type: 'dog', height: 100, weight: 27000 },
+        { name: '犬002', type: 'dog', height: 150, weight: 28000 },
+        { name: '犬003', type: 'dog', height: 200, weight: 20000 },
+        { name: 'ハムスター001', type: 'hamster', height: 10, weight: 50 },
+        { name: '猫001', type: 'cat', height: 30, weight: 10000 },
+      ]
+    }
+  },
+  methods: {
+    filter: function(type) {
+      this.type = type
+    },
+    sort: function(sortType) {
+      this.sortType = sortType
+    },
+    clear: function() {
+      this.type = 'all'
+      this.sortType = 'none'
+    },
+    orderedAnimals: function(animals) {
+      return this.sortType == 'none' ? animals : _.orderBy(animals, this.sortType)
+    },
+    filteredAnimals: function(animals) {
+      let that = this
+      return animals.filter(function(animal) {
+        return that.type == 'all' ? animal : that.type == animal.type
+      })
+    }
+  }
+});
+</script>
+
+</body>
+</html>
