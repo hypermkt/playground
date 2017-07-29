@@ -11,12 +11,12 @@
   <div id="app">
     <p>Vue2 + Official guide recommended</p>
 
-    <button v-on:click="sort('height')">Sort by height</button>
-    <button v-on:click="sort('weight')">Sort by weight</button>
+    <button v-on:click="sortType = 'height'">Sort by height</button>
+    <button v-on:click="sortType = 'weight'">Sort by weight</button>
 
-    <button v-on:click="filter('dog')">dog</button>
-    <button v-on:click="filter('cat')">cat</button>
-    <button v-on:click="filter('hamster')">hamster</button>
+    <button v-on:click="type = 'dog'">dog</button>
+    <button v-on:click="type = 'cat'">cat</button>
+    <button v-on:click="type = 'hamster'">hamster</button>
 
     <button v-on:click="clear()">clear</button>
     <table border="1">
@@ -51,17 +51,13 @@ new Vue({
         { name: '犬002', type: 'dog', height: 150, weight: 28000 },
         { name: '犬003', type: 'dog', height: 200, weight: 20000 },
         { name: 'ハムスター001', type: 'hamster', height: 10, weight: 50 },
-        { name: '猫001', type: 'cat', height: 30, weight: 10000 },
+        { name: 'ハムスター002', type: 'hamster', height: 20, weight: 80 },
+        { name: '猫001', type: 'cat', height: 60, weight: 10000 },
+        { name: '猫002', type: 'cat', height: 30, weight: 9000 },
       ]
     }
   },
   methods: {
-    filter: function(type) {
-      this.type = type
-    },
-    sort: function(sortType) {
-      this.sortType = sortType
-    },
     clear: function() {
       this.type = 'all'
       this.sortType = 'none'
