@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js"></script>
+  <title></title>
+</head>
+<body>
+
+  <div id="app">
+    <p>Vue1 + filterBy + orderBy</p>
+
+    <button v-on:click="sortType = 'height'">Sort by height</button>
+    <button v-on:click="sortType = 'weight'">Sort by weight</button>
+
+    <button v-on:click="type = 'dog'">dog</button>
+    <button v-on:click="type = 'cat'">cat</button>
+    <button v-on:click="type = 'hamster'">hamster</button>
+
+    <button v-on:click="clear()">clear</button>
+    <table border="1">
+    <tr> 
+      <th>name</th>
+      <th>height</th>
+      <th>weight</th>
+    </tr> 
+    <tr v-for="animal in animals | filterBy type in 'type' | orderBy sortType">
+      <td>{{ animal.name }}</td>
+      <td>{{ animal.height }} cm</td>
+      <td>{{ animal.weight }} g</td>
+    </tr> 
+    </table>
+  </div>
+<script>
+
+new Vue({
+  el: '#app',
+  computed: {
+    filterAndSort: function() {
+      return this.filteredAnimals(this.orderedAnimals(this.animals))
+    }
+  },
+  data () {
+    return {
+      type: '',
+      sortType: '',
+      // height = センチメーター, weight = グラム
+      animals: [
+        { name: '犬001', type: 'dog', height: 100, weight: 27000 },
+        { name: '犬002', type: 'dog', height: 150, weight: 28000 },
+        { name: '犬003', type: 'dog', height: 200, weight: 20000 },
+        { name: 'ハムスター001', type: 'hamster', height: 10, weight: 50 },
+        { name: 'ハムスター002', type: 'hamster', height: 20, weight: 80 },
+        { name: '猫001', type: 'cat', height: 60, weight: 10000 },
+        { name: '猫002', type: 'cat', height: 30, weight: 9000 },
+      ]
+    }
+  },
+  methods: {
+    clear: function() {
+      this.type = ''
+      this.sortType = 'none'
+    }
+  }
+});
+</script>
+
+</body>
+</html>
