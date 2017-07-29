@@ -38,7 +38,10 @@ new Vue({
   el: '#app',
   computed: {
     filterAndSort: function() {
-      return this.filteredAnimals(this.orderedAnimals(this.animals))
+      let animals = this.animals
+      animals = this.filter(animals)
+      animals = this.sort(animals)
+      return animals
     }
   },
   data () {
@@ -62,10 +65,10 @@ new Vue({
       this.type = 'all'
       this.sortType = 'none'
     },
-    orderedAnimals: function(animals) {
+    sort: function(animals) {
       return this.sortType == 'none' ? animals : _.orderBy(animals, this.sortType)
     },
-    filteredAnimals: function(animals) {
+    filter: function(animals) {
       let that = this
       return animals.filter(function(animal) {
         return that.type == 'all' ? animal : that.type == animal.type
