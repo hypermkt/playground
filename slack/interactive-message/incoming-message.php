@@ -1,6 +1,6 @@
 <?php
 
-$base_url = 'xxx';
+require_once './config.php';
 
 $data = [
     "text" => "いついつに飲み会をしますー",
@@ -25,7 +25,7 @@ $data = [
 
 $curl = curl_init();
 
-curl_setopt($curl, CURLOPT_URL, $base_url);
+curl_setopt($curl, CURLOPT_URL, INCOMING_WEBHOOK_URL);
 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST'); // post
 curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data)); // jsonデータを送信
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
