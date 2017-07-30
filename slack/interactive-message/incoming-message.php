@@ -3,12 +3,12 @@
 require_once './config.php';
 
 $data = [
-    "text" => "いついつに飲み会をしますー",
+    "text" => "依頼した◯◯のタスクについて",
     "attachments" => [
         [
-            "text" => "終わったら「完了」ボタンを押してください〜 @hypermkt",
+            "text" => "終わったら「完了」ボタンを押してください @hypermkt",
             "fallback" => "You are unable to choose a game",
-            "callback_id" => "wopr_game",
+            "callback_id" => "task_check",
             "color" => "#3AA3E3",
             "attachment_type" => "default",
             "actions" => [
@@ -25,7 +25,7 @@ $data = [
 
 $curl = curl_init();
 
-curl_setopt($curl, CURLOPT_URL, INCOMING_WEBHOOK_URL);
+curl_setopt($curl, CURLOPT_URL, SLACK_APP_INCOMING_WEBHOOK_URL);
 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST'); // post
 curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data)); // jsonデータを送信
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
