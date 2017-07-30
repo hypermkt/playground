@@ -25,7 +25,7 @@ $data = [
 
 $curl = curl_init();
 
-curl_setopt($curl, CURLOPT_URL, INCOMING_WEBHOOK_URL);
+curl_setopt($curl, CURLOPT_URL, SLACK_APP_INCOMING_WEBHOOK_URL);
 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST'); // post
 curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data)); // jsonデータを送信
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
