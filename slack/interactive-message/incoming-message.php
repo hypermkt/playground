@@ -3,12 +3,12 @@
 require_once './config.php';
 
 $data = [
-    "text" => "いついつに飲み会をしますー",
+    "text" => "依頼した◯◯のタスクについて",
     "attachments" => [
         [
-            "text" => "終わったら「完了」ボタンを押してください〜 @hypermkt",
+            "text" => "終わったら「完了」ボタンを押してください @hypermkt",
             "fallback" => "You are unable to choose a game",
-            "callback_id" => "wopr_game",
+            "callback_id" => "task_check",
             "color" => "#3AA3E3",
             "attachment_type" => "default",
             "actions" => [
