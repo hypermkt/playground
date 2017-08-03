@@ -16,7 +16,13 @@ $data = [
                     "name" => "yes",
                     "text" => "完了",
                     "type" => "button",
-                    "value" => "yes"
+                    "value" => "yes",
+                    "confirm" => [
+                        "title" => "確認",
+                        "text" => "本当によろしいですか？",
+                        "ok_text" => "はい",
+                        "dismiss_text" => "いいえ"
+                    ]
                 ],
             ]
         ]
