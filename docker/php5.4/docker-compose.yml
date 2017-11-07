@@ -1,0 +1,5 @@
+version: '2'
+
+services:
+  php54:
+    image: php:5.4-apache
