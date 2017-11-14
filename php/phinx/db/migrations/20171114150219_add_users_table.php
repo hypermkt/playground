@@ -3,7 +3,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class AddPostsTable extends AbstractMigration
+class AddUsersTable extends AbstractMigration
 {
     /**
      * Change Method.
