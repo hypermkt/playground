@@ -4,9 +4,9 @@ services:
     image: mysql:5.7
     environment:
       TZ: Asia/Tokyo
-      MYSQL_DATABASE: development
-      MYSQL_USER: devel
-      MYSQL_PASSWORD: development
+      MYSQL_DATABASE: develop
+      MYSQL_USER: develop
+      MYSQL_PASSWORD: develop
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     ports:
-      - "3306:3306"
+      - "3307:3306"
