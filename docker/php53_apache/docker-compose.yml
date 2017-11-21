@@ -1,4 +1,19 @@
 version: '2'
 services:
   web:
-    image: php53-apache
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    hostname: www.anikore.dev
+    ports:
+      - "80:80"
+    volumes:
+      - ./cakephp-1.3.21:/var/www/html
+    links:
+      - database
+  database:
+    image: mysql:5.5
+    environment:
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: ''
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
