@@ -1,0 +1,23 @@
+version: '2'
+services:
+  php:
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      TZ: Asia/Tokyo
+      LANG: ja_JP.UTF-8
+    depends_on:
+      - database 
+  database:
+    image: mysql:5.7
+    environment:
+      TZ: Asia/Tokyo
+      MYSQL_DATABASE: development
+      MYSQL_USER: development
+      MYSQL_PASSWORD: password
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
