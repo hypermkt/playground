@@ -7,14 +7,18 @@ services:
       - ./:/var/www/html
     build:
       context: ./
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.php
     environment:
       TZ: Asia/Tokyo
       LANG: ja_JP.UTF-8
     depends_on:
       - database 
   database:
-    image: mysql:5.7
+    build:
+      context: ./
+      dockerfile: Dockerfile.database
+    volumes:
+      - ./initdb.d/:/docker-entrypoint-initdb.d/:ro
     environment:
       TZ: Asia/Tokyo
       MYSQL_DATABASE: development
