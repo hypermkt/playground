@@ -17,6 +17,8 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile.database
+    volumes:
+      - ./initdb.d/:/docker-entrypoint-initdb.d/:ro
     environment:
       TZ: Asia/Tokyo
       MYSQL_DATABASE: development
