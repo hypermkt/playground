@@ -4,3 +4,5 @@ RUN apt-get update && apt-get -qq install -y --no-install-recommends vim tree zl
 RUN docker-php-ext-install pdo_mysql
 RUN pecl install memcached
 RUN docker-php-ext-enable memcached
+
+COPY docker-php-ext-memcached.ini /usr/local/etc/php/conf.d/docker-php-ext-memcached.ini
