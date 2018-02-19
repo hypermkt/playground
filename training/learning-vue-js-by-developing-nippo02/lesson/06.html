@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <span v-if="display">top secret</span>
+      <button v-on:click="change()" />open top secret</button>
+    </ul>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        display: false
+      },
+      methods: {
+        change: function() {
+          this.display = true;
+        }
+      }
+    })
+  </script>
+</body>
+</html>
