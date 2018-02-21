@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+</head>
+<body>
+  <h2>ほしいもの一覧</h2>
+  <div id="app">
+      <input type="text" v-model="message">
+      <ul>
+        <li v-for="item in items">{{ item.message }}</li>
+      </ul>
+      <button v-on:click="addItem">ほしいものを追加する</button>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: '',
+        items: []
+      },
+      methods: {
+        addItem: function() {
+          this.items.push({message: this.message})
+          this.message = ''
+        }
+      }
+    })
+  </script>
+</body>
+</html>

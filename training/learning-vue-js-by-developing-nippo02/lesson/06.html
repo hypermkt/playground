@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <p v-if="pushed">訴えてやる!</p>
+      <p v-else="pushed">押すなよー 絶対に押すなよー</p>
+      <button v-on:click="push()" />押す</button>
+    </ul>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        pushed: false
+      },
+      methods: {
+        push: function() {
+          this.pushed = true;
+        }
+      }
+    })
+  </script>
+</body>
+</html>
