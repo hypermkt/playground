@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
   <title>nippo</title>
 </head>
 <body>
@@ -50,7 +49,7 @@
       >削除</button>
   </div>
 
-  <div align="center">nippo</div>
+  <div align="center">nippo All rights reserved.</div>
 </div>
 <script>
 new Vue({
@@ -60,11 +59,14 @@ new Vue({
     nippoCache: null,
     content: '', 
     nippoes: [],
-    today: moment().format('YYYY年MM月DD日')
+    today: ''
+  },
+  created: function() {
+    this.today = this.getNow();
   },
   methods: {
     addNippo: function() {
-      this.nippoes.unshift({ date: moment().format('YYYY-MM-DD'), content: this.content })
+      this.nippoes.unshift({ date: this.getNow(), content: this.content })
       this.content = ''
     },
     editNippo: function(nippo) {
@@ -83,6 +85,11 @@ new Vue({
     },
     isAddMode: function() {
       return this.mode == 'add'
+    },
+    // 今日の年月日を取得する
+    getNow: function () {
+      var now = new Date();
+      return now.getFullYear() + '年' + (now.getMonth() + 1) + '月' + now.getDate() + '日';
     }
   }
 });

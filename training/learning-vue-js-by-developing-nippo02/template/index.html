@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
   <title>nippo</title>
 </head>
 <body>
@@ -17,14 +16,24 @@
 
   <h2 class="subtitle">今日は {{ today }}です。</h2> 
  
-  <div align="center">nippo</div>
+  <div align="center">nippo All rights reserved.</div>
 </div>
 <script>
 new Vue({
   el: '#app',
   data: {
-    today: moment().format('YYYY年MM月DD日')
+    today: ''
   },
+  created: function() {
+    this.today = this.getNow();
+  },
+  methods: {
+    // 今日の年月日を取得する
+    getNow: function() {
+      var now = new Date();
+      return now.getFullYear() + '年' + (now.getMonth() + 1) + '月' + now.getDate() + '日';
+    }
+  }
 });
 </script>
 </body>
