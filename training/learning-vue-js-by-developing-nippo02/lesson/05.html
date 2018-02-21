@@ -7,8 +7,8 @@
 <body>
   <div id="app">
     <ul>
-      Hello {{ message }}
-      <button v-on:click="say()" />say</button>
+      {{ message }}
+      <button v-on:click="say()" />えいえい!怒った?</button>
     </ul>
   </div>
 
@@ -20,8 +20,7 @@
       },
       methods: {
         say: function() {
-          console.log("pushed");
-          this.message = 'world!';
+          this.message = '怒ってないよ';
         }
       }
     })

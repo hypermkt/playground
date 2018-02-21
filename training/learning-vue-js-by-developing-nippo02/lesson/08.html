@@ -5,12 +5,13 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
 </head>
 <body>
+  <h2>ほしいもの一覧</h2>
   <div id="app">
       <input type="text" v-model="message">
       <ul>
         <li v-for="(item, key) in items">{{ item.message }} <button v-on:click="deleteItem(key)">deleteItem</button></li>
       </ul>
-      <button v-on:click="addItem">addItem</button>
+      <button v-on:click="addItem">ほしいものを追加する</button>
   </div>
 
   <script>

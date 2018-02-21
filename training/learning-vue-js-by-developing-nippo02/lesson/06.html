@@ -7,8 +7,9 @@
 <body>
   <div id="app">
     <ul>
-      <span v-if="display">top secret</span>
-      <button v-on:click="change()" />open top secret</button>
+      <p v-if="pushed">訴えてやる!</p>
+      <p v-else="pushed">押すなよー 絶対に押すなよー</p>
+      <button v-on:click="push()" />押す</button>
     </ul>
   </div>
 
@@ -16,11 +17,11 @@
     var app = new Vue({
       el: '#app',
       data: {
-        display: false
+        pushed: false
       },
       methods: {
-        change: function() {
-          this.display = true;
+        push: function() {
+          this.pushed = true;
         }
       }
     })
