@@ -8,7 +8,7 @@
   <div id="app">
       <input type="text" v-model="message">
       <ul>
-        <li v-for="item(item, key) in items">{{ item.message }} <button v-on:click="deleteItem(key)">deleteItem</button></li>
+        <li v-for="(item, key) in items">{{ item.message }} <button v-on:click="deleteItem(key)">deleteItem</button></li>
       </ul>
       <button v-on:click="addItem">addItem</button>
   </div>
