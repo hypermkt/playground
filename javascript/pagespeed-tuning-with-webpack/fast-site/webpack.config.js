@@ -1,7 +1,8 @@
+var webpack = require('webpack');
+
 module.exports = {
     entry: [
         './src/scripts/main.js',
-        './src/scripts/slideshow.js',
     ],
     output: {
         path: __dirname + '/build/',
@@ -18,13 +19,16 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(sass|scss)$/,
-                loader: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader'
-                ]
-            }
+                // https://qiita.com/koichirokamoto/items/1bdbee5dd5657012b5fa
+                test: /\.(jpg|png)$/,
+                loaders: 'url-loader'
+              },
         ]
-    }
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+          })
+    ]
 }

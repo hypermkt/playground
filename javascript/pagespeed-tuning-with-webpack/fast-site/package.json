@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode development",
+    "build": "webpack --mode production",
+    "build-dev": "webpack --mode development",
     "watch": "webpack --watch --mode development"
   },
   "keywords": [],
@@ -13,14 +14,16 @@
   "description": "",
   "devDependencies": {
     "css-loader": "^0.28.10",
+    "file-loader": "^1.1.11",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.7",
+    "script-loader": "^0.7.2",
     "style-loader": "^0.20.3",
+    "url-loader": "^1.0.1",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.11"
   },
   "dependencies": {
-    "bulma": "^0.6.2",
     "jquery": "^3.3.1"
   }
 }

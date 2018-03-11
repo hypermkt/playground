@@ -1,2 +1,2 @@
 require('../styles/main.css');
-require('bulma');
+require('../styles/bulma.css');
