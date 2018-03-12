@@ -22,13 +22,7 @@ module.exports = {
                 // https://qiita.com/koichirokamoto/items/1bdbee5dd5657012b5fa
                 test: /\.(jpg|png)$/,
                 loaders: 'url-loader'
-              },
+            },
         ]
-    },
-    plugins: [
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery'
-          })
-    ]
+    }
 }
