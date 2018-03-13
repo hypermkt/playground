@@ -1,5 +1,5 @@
-require('../styles/main.css');
 require('../styles/bulma.css');
+require('../styles/main.css');
 
 const $ = require('jquery');
 
