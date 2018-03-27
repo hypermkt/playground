@@ -42,7 +42,7 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => 'passport', // 認証のAPIリクエストが送信された時にパスポートのTokenGuardを使用するようにアプリケーションに指示する
             'provider' => 'users',
         ],
     ],
