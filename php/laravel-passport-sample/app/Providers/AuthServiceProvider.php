@@ -25,6 +25,6 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Passport::routes(); // アクセストークンの発行、失効、クライアントとパーソナルアクセストークンの管理のルーティングを登録する
     }
 }
