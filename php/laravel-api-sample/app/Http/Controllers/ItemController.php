@@ -24,12 +24,7 @@ class ItemController extends Controller
      */
     public function create(Request $request)
     {
-        $item = new Item();
-        // todo: ログインユーザのidが入るようにする
-        $item->user_id = \App\User::query()->first()->id;
-        $item->content = $request->input('content');
-        $item->save();
-        return response($item, 201);
+
     }
 
     /**
@@ -40,7 +35,12 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $item = new Item();
+        // todo: ログインユーザのidが入るようにする
+        $item->user_id = \App\User::query()->first()->id;
+        $item->content = $request->input('content');
+        $item->save();
+        return response($item, 201);
     }
 
     /**
@@ -51,7 +51,7 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        //
+        return response($item);
     }
 
     /**
