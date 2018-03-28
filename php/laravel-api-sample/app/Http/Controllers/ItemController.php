@@ -14,7 +14,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        return response(Item::all());
     }
 
     /**
@@ -22,9 +22,14 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $item = new Item();
+        // todo: ログインユーザのidが入るようにする
+        $item->user_id = \App\User::query()->first()->id;
+        $item->content = $request->input('content');
+        $item->save();
+        return response($item, 201);
     }
 
     /**
