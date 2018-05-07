@@ -36,4 +36,10 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    // ログイン認証するカラムをemailからlogin_idに変更
+    public function username()
+    {
+        return 'login_id';
+    }
 }
