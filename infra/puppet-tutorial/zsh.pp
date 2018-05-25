@@ -1,0 +1,3 @@
+package { 'zsh':
+  ensure => installed,
+}

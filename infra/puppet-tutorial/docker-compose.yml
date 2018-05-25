@@ -1,0 +1,9 @@
+version: '2'
+services:
+  puppet:
+    image: puppet/puppetserver-standalone
+    volumes:
+      - ./hieradata:/etc/puppetlabs/code/environments/production/hieradata
+      - ./manifests:/etc/puppetlabs/code/environments/production/manifests
+      - ./modules:/etc/puppetlabs/code/environments/production/modules
+      - ./templates:/etc/puppetlabs/code/environments/production/templates
