@@ -1,0 +1,13 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    puppet-nginx (0.12.0)
+      puppetlabs-concat (< 5.0.0, >= 3.0.0)
+      puppetlabs-stdlib (< 5.0.0, >= 4.22.0)
+    puppetlabs-concat (4.2.1)
+      puppetlabs-stdlib (< 5.0.0, >= 4.13.1)
+    puppetlabs-stdlib (4.25.1)
+
+DEPENDENCIES
+  puppet-nginx (>= 0)
+
