@@ -12,5 +12,9 @@ $ bundle exec librarian-puppet install --path vendor/modules
 ## Run
 
 ```
-$ docker-compose exec web001 puppet apply --modulepath modules /etc/puppet/manifests/site.pp
+# Start Puppet server
+$ docker-compose exec pmaster systemctl start puppetserver
+
+# Execute puppet
+$ docker-compose exec web001 puppet agent --test --server pmaster.local --environment development --noop
 ```
