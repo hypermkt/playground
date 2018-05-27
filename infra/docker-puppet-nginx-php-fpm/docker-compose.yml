@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web001:
+    build: .
+    command: /sbin/init
+    privileged: true
+    hostname: web001
+    ports:
+      - '8080:80'
