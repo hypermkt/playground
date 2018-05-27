@@ -2,6 +2,7 @@ include ::nginx
 
 nginx::resource::server { 'set www root':
   www_root => '/var/www/html',
+  ensure => present, # 常に起動している状態にする
   require  => [Package['nginx'], Class['Nginx::Config']],
 }
 
