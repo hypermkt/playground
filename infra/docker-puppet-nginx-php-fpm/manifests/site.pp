@@ -15,3 +15,6 @@ file { $dirs:
 file { '/var/www/hypermkt/public/index.html':
   content => 'hello world',
 }
+
+include epel
+include remi
