@@ -16,5 +16,14 @@ file { '/var/www/hypermkt/public/index.html':
   content => 'hello world',
 }
 
-include epel
-include remi
+include ::epel
+include ::remi
+
+$phpPakages = [
+  'php-fpm',
+]
+
+package { $phpPakages:
+  ensure => installed,
+  install_options => '--enablerepo=remi-php72',
+}
