@@ -1,7 +1,6 @@
 FROM asuforce/puppet
 
-RUN apt-get update -qq \
-  && apt-get install -qq git
+RUN apt-get update -qq
 
 ADD . /etc/puppet
 
