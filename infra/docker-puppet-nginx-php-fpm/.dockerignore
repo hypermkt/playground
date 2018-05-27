@@ -1,0 +1,7 @@
+docker-compose.yml
+Dockerfile
+/vendor
+.DS_Store
+.git
+.librarian
+.bundle
