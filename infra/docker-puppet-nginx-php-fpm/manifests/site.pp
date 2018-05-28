@@ -26,4 +26,5 @@ $phpPakages = [
 package { $phpPakages:
   ensure => installed,
   install_options => '--enablerepo=remi-php72',
+  require => Yumrepo['remi'],
 }
