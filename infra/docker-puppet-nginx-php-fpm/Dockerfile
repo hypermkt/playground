@@ -10,6 +10,6 @@ ADD . /etc/puppet
 WORKDIR /etc/puppet
 
 RUN bundle install --path vendor/bundle
-RUN bundle exec librarian-puppet install
+RUN bundle exec librarian-puppet install --path vendor/modules
 
 ENV PATH /opt/puppetlabs/bin:$PATH
