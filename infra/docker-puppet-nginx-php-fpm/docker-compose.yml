@@ -5,5 +5,7 @@ services:
     command: /sbin/init
     privileged: true
     hostname: web001
+    volumes:
+      - .:/etc/puppet
     ports:
       - '8080:80'
