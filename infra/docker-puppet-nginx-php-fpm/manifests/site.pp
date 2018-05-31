@@ -7,11 +7,11 @@ include ::nginx
 #}
 
 file { '/etc/nginx/conf.d/default.conf':
-  ensure => present,
+  ensure => file,
   owner => 'root',
   group => 'root',
   mode => '0644',
-  content => template('nginx/default.conf'),
+  content => template('nginx/default.conf.erb'),
   require => Package['nginx'],
   notify => Service['nginx'],
 }
