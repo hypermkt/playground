@@ -1,0 +1,26 @@
+version: '3'
+services:
+  web001:
+    build: .
+    command: /sbin/init
+    privileged: true
+    hostname: web001
+    volumes:
+      - ./manifests:/etc/puppetlabs/code/environments/development/manifests
+      - ./modules:/etc/puppetlabs/code/environments/development/modules
+      - ./roles:/etc/puppetlabs/code/environments/development/roles
+    ports:
+      - '8080:80'
+    links:
+      - pmaster:pmaster.local
+  pmaster:
+    build:
+      context: .
+      dockerfile: Dockerfile-master
+    volumes:
+      - ./manifests:/etc/puppetlabs/code/environments/development/manifests
+      - ./modules:/etc/puppetlabs/code/environments/development/modules
+      - ./roles:/etc/puppetlabs/code/environments/development/roles
+    command: /sbin/init
+    privileged: true
+    hostname: pmaster.local
