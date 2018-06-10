@@ -10,6 +10,8 @@ class Account extends Authenticatable
 {
     use HasApiTokens;
 
+    protected $table = 't_account';
+
     /**
      * The attributes that are mass assignable.
      *
