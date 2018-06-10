@@ -15,6 +15,8 @@ class CreateTAccountTable extends Migration
     {
         Schema::create('t_account', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('login_id');
+            $table->string('pass');
             $table->timestamps();
         });
     }
