@@ -3,9 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Account extends Authenticatable
+class Account extends Model
 {
     /**
      * The attributes that are mass assignable.
