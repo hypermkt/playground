@@ -11,6 +11,9 @@ class AccountSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('t_account')->insert([
+            'login_id' => 'hoge',
+            'pass' => 'fuga',
+        ]);
     }
 }
