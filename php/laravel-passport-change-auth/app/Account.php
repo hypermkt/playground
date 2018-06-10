@@ -26,4 +26,14 @@ class Account extends Model
     protected $hidden = [
         'pass'
     ];
+
+    public function findForPassport($username)
+    {
+        return $this->where('login_id', $username)->first();
+    }
+
+    public function validateForPassportPasswordGrant($password)
+    {
+        return $this->password == $password;
+    }
 }
