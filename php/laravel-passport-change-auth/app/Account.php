@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Passport\HasApiTokens;
 
 class Account extends Model
 {
+    use HasApiTokens;
+
     /**
      * The attributes that are mass assignable.
      *
