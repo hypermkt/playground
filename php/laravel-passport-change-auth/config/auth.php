@@ -72,7 +72,7 @@ return [
 
          'accounts' => [
              'driver' => 'eloquent',
-             'table' => App\Account::class,
+             'model' => App\Account::class,
          ],
     ],
 
