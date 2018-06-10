@@ -37,6 +37,6 @@ class Account extends Authenticatable
 
     public function validateForPassportPasswordGrant($password)
     {
-        return $this->password == $password;
+        return $this->pass == $password;
     }
 }
