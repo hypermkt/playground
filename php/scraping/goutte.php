@@ -2,12 +2,10 @@
 
 require_once './vendor/autoload.php';
 
-$url = 'http://b.hatena.ne.jp/hotentry/it';
-
 use Goutte\Client;
 
 $client = new Client();
-
+$url = 'http://b.hatena.ne.jp/hotentry/it';
 $crawler = $client->request('GET', $url);
 
 $crawler->filter('div.entrylist-contents-main')->each(function ($node) {
