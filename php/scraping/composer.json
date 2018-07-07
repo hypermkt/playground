@@ -1,0 +1,6 @@
+{
+    "require": {
+        "jaeger/querylist": "^4.0",
+        "fabpot/goutte": "^3.2"
+    }
+}
