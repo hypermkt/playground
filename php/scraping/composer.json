@@ -1,6 +1,7 @@
 {
     "require": {
         "jaeger/querylist": "^4.0",
-        "guzzle/guzzle": "^3.9"
+        "guzzle/guzzle": "^3.9",
+        "fabpot/goutte": "^3.2"
     }
 }
