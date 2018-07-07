@@ -6,11 +6,8 @@ use QL\QueryList;
 
 $url = 'http://b.hatena.ne.jp/hotentry/it';
 
-$client = new \GuzzleHttp\Client();
-$response = $client->request('GET', $url);
-
 $ql = QueryList::getInstance();
-$ql->html($response->getBody());
+$ql->get($url);
 
 $ql->find('div.entrylist-contents-main')->map(function($content) {
     $title = $content->find('h3.entrylist-contents-title')->text();
