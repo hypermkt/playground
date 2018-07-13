@@ -1,0 +1,12 @@
+version: '3'
+services:
+  nginx:
+    build: ./nginx
+    ports:
+      - "8000:80"
+    depends_on:
+      - php
+  php:
+    build: ./php
+    ports:
+      - "9000:9000"
