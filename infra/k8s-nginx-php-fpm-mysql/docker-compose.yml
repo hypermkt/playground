@@ -10,3 +10,11 @@ services:
     build: ./php
     ports:
       - "9000:9000"
+  database:
+    build: ./database
+    environment:
+      TZ: Asia/Tokyo
+      MYSQL_DATABASE: sample
+      MYSQL_USER: sample
+      MYSQL_PASSWORD: sample:w
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
