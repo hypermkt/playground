@@ -12,7 +12,7 @@ class BookTest extends TestCase
 
     public function testIndex()
     {
-        $response = $this->get('/api/books');
+        $response = $this->getJson('/api/books');
         $response->assertStatus(200);
     }
 
