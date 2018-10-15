@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BookRequest;
 use Illuminate\Http\Request;
+use App\Book;
 
 class BookController extends Controller
 {
@@ -32,9 +34,13 @@ class BookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BookRequest $request)
     {
-        //
+        $book = Book::create([
+            'title' => $request->title
+        ]);
+
+        return response()->json($book, 201);
     }
 
     /**

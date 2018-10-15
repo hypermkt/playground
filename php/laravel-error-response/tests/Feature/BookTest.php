@@ -26,4 +26,10 @@ class BookTest extends TestCase
             'code' => 'not_found',
         ]);
     }
+
+    public function testResponse201Created_WhenGivenValidParams()
+    {
+        $response = $this->postJson('/api/books', ['title' => 'hoge']);
+        $response->assertStatus(201);
+    }
 }
