@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -46,6 +47,37 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        $statusCode = null;
+        $jsonResponse = [
+            'type' => '',
+            'title' => '',
+            'code' => '',
+        ];
+        if ($exception instanceof NotFoundHttpException) {
+            $jsonResponse['code'] = 'not_found';
+            $statusCode = $exception->getStatusCode();
+        }
+
+        return response()
+            ->json($jsonResponse, $statusCode);
+        /**
         return parent::render($request, $exception);
+        {
+            "type": "https://example.net/validation-error",
+            "title": "送られたパラメータが正しくありません。",
+            "code": "validation_error",
+            "invalid-params": {
+                "name": "body",
+                "reason": "本文を入力して下さい"
+            }
+        }
+        return response()->json([
+            'type' => '',
+            'title' => '',
+            'code' => '',
+            'invalid-params' => [
+            ],
+        ]);
+         */
     }
 }
