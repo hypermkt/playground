@@ -62,29 +62,17 @@ class Handler extends ExceptionHandler
         // 422 Validation Error
         } elseif ($exception instanceof ValidationException) {
             $jsonResponse['code'] = 'validation_error';
+            $invalidParams = [];
+            foreach ($exception->errors() as $key => $values) {
+                $invalidParams['name'] = $key;
+                $invalidParams['reason'] = $values;
+            }
+
+            $jsonResponse['invalid-params'][] = $invalidParams;
             $statusCode = $exception->status;
         }
 
         return response()
             ->json($jsonResponse, $statusCode);
-        /**
-        return parent::render($request, $exception);
-        {
-            "type": "https://example.net/validation-error",
-            "title": "送られたパラメータが正しくありません。",
-            "code": "validation_error",
-            "invalid-params": {
-                "name": "body",
-                "reason": "本文を入力して下さい"
-            }
-        }
-        return response()->json([
-            'type' => '',
-            'title' => '',
-            'code' => '',
-            'invalid-params' => [
-            ],
-        ]);
-         */
     }
 }

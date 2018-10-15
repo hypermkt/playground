@@ -37,5 +37,18 @@ class BookTest extends TestCase
     {
         $response = $this->postJson('/api/books', ['title' => '']);
         $response->assertStatus(422);
+        $response->assertJson([
+            'type' => '',
+            'title' => '',
+            'code' => 'validation_error',
+            'invalid-params' => [
+                [
+                    'name' => 'title',
+                    'reason' => [
+                        'The title field is required.'
+                    ]
+                ]
+            ],
+        ]);
     }
 }
