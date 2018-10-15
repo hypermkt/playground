@@ -32,4 +32,10 @@ class BookTest extends TestCase
         $response = $this->postJson('/api/books', ['title' => 'hoge']);
         $response->assertStatus(201);
     }
+
+    public function testResponse422_WhenValidationError()
+    {
+        $response = $this->postJson('/api/books', ['title' => '']);
+        $response->assertStatus(422);
+    }
 }

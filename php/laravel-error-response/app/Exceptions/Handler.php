@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler
@@ -47,6 +48,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+//        return parent::render($request, $exception);
         $statusCode = null;
         $jsonResponse = [
             'type' => '',
@@ -57,6 +59,10 @@ class Handler extends ExceptionHandler
         if ($exception instanceof NotFoundHttpException) {
             $jsonResponse['code'] = 'not_found';
             $statusCode = $exception->getStatusCode();
+        // 422 Validation Error
+        } elseif ($exception instanceof ValidationException) {
+            $jsonResponse['code'] = 'validation_error';
+            $statusCode = $exception->status;
         }
 
         return response()
