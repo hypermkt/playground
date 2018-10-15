@@ -53,6 +53,7 @@ class Handler extends ExceptionHandler
             'title' => '',
             'code' => '',
         ];
+        // 404 Not Found
         if ($exception instanceof NotFoundHttpException) {
             $jsonResponse['code'] = 'not_found';
             $statusCode = $exception->getStatusCode();
