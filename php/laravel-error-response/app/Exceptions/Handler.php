@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -63,6 +64,10 @@ class Handler extends ExceptionHandler
         } elseif ($exception instanceof ValidationException) {
             return (new ValidationErrorException($exception->errors(), $exception->getMessage(), $exception->status))
                 ->toResponse($request);
+        } else {
+            $jsonResponse['code'] = 'internal_server_error';
+            $jsonResponse['title'] = 'Internal Server Error';
+            $statusCode = Response::HTTP_INTERNAL_SERVER_ERROR;
         }
 
         return response()
