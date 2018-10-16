@@ -39,7 +39,7 @@ class BookTest extends TestCase
         $response->assertStatus(422);
         $response->assertJson([
             'type' => '',
-            'title' => '',
+            'title' => 'The given data was invalid.',
             'code' => 'validation_error',
             'invalid-params' => [
                 [

@@ -49,7 +49,7 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
 //        return parent::render($request, $exception);
-        $statusCode = null;
+        $statusCode = 500;
         $jsonResponse = [
             'type' => '',
             'title' => '',
@@ -61,15 +61,8 @@ class Handler extends ExceptionHandler
             $statusCode = $exception->getStatusCode();
         // 422 Validation Error
         } elseif ($exception instanceof ValidationException) {
-            $jsonResponse['code'] = 'validation_error';
-            $invalidParams = [];
-            foreach ($exception->errors() as $key => $values) {
-                $invalidParams['name'] = $key;
-                $invalidParams['reason'] = $values;
-            }
-
-            $jsonResponse['invalid-params'][] = $invalidParams;
-            $statusCode = $exception->status;
+            return (new ValidationErrorException($exception->errors(), $exception->getMessage(), $exception->status))
+                ->toResponse($request);
         }
 
         return response()
