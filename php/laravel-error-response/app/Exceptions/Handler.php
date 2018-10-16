@@ -29,6 +29,11 @@ class Handler extends ExceptionHandler
         'password_confirmation',
     ];
 
+    protected $codes = [
+        Response::HTTP_NOT_FOUND => 'not_found',
+        Response::HTTP_INTERNAL_SERVER_ERROR => 'internal_server_error',
+    ];
+
     /**
      * Report or log an exception.
      *
@@ -50,27 +55,35 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
 //        return parent::render($request, $exception);
-        $statusCode = 500;
         $jsonResponse = [
             'type' => '',
             'title' => '',
             'code' => '',
         ];
-        // 404 Not Found
-        if ($exception instanceof NotFoundHttpException) {
-            $jsonResponse['code'] = 'not_found';
-            $statusCode = $exception->getStatusCode();
+
+        $e = $this->prepareException($exception);
+
         // 422 Validation Error
-        } elseif ($exception instanceof ValidationException) {
-            return (new ValidationErrorException($exception->errors(), $exception->getMessage(), $exception->status))
+        if ($e instanceof ValidationException) {
+            return (new ValidationErrorException($e->errors(), $e->getMessage(), $e->status))
                 ->toResponse($request);
+        } elseif ($this->isHttpException($e)) {
+            if ($e instanceof NotFoundHttpException) {
+                $jsonResponse['code'] = $this->getCode(Response::HTTP_NOT_FOUND);
+            }
+            $statusCode = $e->getStatusCode();
         } else {
-            $jsonResponse['code'] = 'internal_server_error';
+            $jsonResponse['code'] = $this->getCode(Response::HTTP_INTERNAL_SERVER_ERROR);
             $jsonResponse['title'] = 'Internal Server Error';
             $statusCode = Response::HTTP_INTERNAL_SERVER_ERROR;
         }
 
         return response()
             ->json($jsonResponse, $statusCode);
+    }
+
+    protected function getCode($statusCode)
+    {
+        return $this->codes[$statusCode];
     }
 }
