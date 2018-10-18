@@ -13,8 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('books', 'BookController@index');
+Route::post('books', 'BookController@store');
+
+Route::middleware('auth:api')->group(function () {
+    Route::put('books/{bookId}', 'BookController@update');
 });
 
-Route::resource('books', 'BookController');

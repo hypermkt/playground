@@ -5,10 +5,18 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Laravel\Passport\Passport;
 
 class BookTest extends TestCase
 {
     use DatabaseTransactions;
+    private $user;
+
+    public function setUp()
+    {
+        parent::setUp();
+        $this->user = factory(\App\User::class)->create();
+    }
 
     public function testIndex()
     {
@@ -31,6 +39,14 @@ class BookTest extends TestCase
     {
         $response = $this->postJson('/api/books', ['title' => 'hoge']);
         $response->assertStatus(201);
+    }
+
+    public function testUpdate_Response200OK_WhenGivenValidParams()
+    {
+        Passport::actingAs($this->user);
+        $book = factory(\App\Book::class)->create();
+        $response = $this->putJson('/api/books/' . $book->id, ['title' => 'hoge']);
+        $response->assertStatus(200);
     }
 
     public function testResponse422_WhenValidationError()
