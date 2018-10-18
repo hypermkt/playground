@@ -33,6 +33,13 @@ class BookTest extends TestCase
         ]);
     }
 
+    public function testIndex_Response400_WhenRequestWithInvalidQueryParameters()
+    {
+        $book = factory(\App\Book::class)->create();
+        $response = $this->getJson('/api/books?width=200');
+        $response->assertStatus(400);
+    }
+
     public function testResponse404NotFound_WhenRequestNotExistingRouting()
     {
         $response = $this->getJson('/api/not_found_routing');
