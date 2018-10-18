@@ -17,7 +17,9 @@ class BaseErrorException extends RuntimeException implements Responsable
     protected $codes = [
         400 => 'bad_request',
         401 => 'unauthorized',
+        403 => 'forbidden',
         404 => 'not_found',
+        405 => 'method_not_allowed',
         500 => 'internal_server_error',
     ];
 
