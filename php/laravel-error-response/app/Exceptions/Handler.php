@@ -49,22 +49,25 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-//        return parent::render($request, $exception);
-
+        // アプリケーション固有の例外をHTTP系例外に変換する
         $e = $this->prepareException($exception);
 
-        // 422 Validation Error
         if ($e instanceof ValidationException) {
             return (new ValidationErrorException($e->errors(), $e->getMessage(), $e->status))
                 ->toResponse($request);
+
+        // 認証ありエンドポイントでアクセストークンが不正な場合
         } elseif ($e instanceof AuthenticationException) {
             return (new BaseErrorException('', $e->getMessage(), Response::HTTP_UNAUTHORIZED))
                 ->toResponse($request);
+
+        // HTTP系例外が発生した場合
         } elseif ($this->isHttpException($e)) {
             return (new BaseErrorException('', $e->getMessage(), $e->getStatusCode()))
                 ->toResponse($request);
         }
 
+        // それ以外の場合は Internal Server Error とする
         return (new BaseErrorException('', 'Internal Server Error', Response::HTTP_INTERNAL_SERVER_ERROR))
             ->toResponse($request);
     }
