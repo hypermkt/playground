@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Exceptions\BaseErrorException;
+use App\Exceptions\QueryParameterErrorException;
 use App\Http\Requests\BookRequest;
 use Illuminate\Http\Request;
 use App\Book;
@@ -18,7 +18,7 @@ class BookController extends Controller
     {
         // 必須クエリパラメーターがない場合は400 Bad Requestにする
         if (is_null($request->width) || is_null($request->height)) {
-            return (new BaseErrorException('', 'Bad Request', 400))->toResponse($request);
+            return (new QueryParameterErrorException())->toResponse($request);
         }
 
         return response()->json((Book::all())->map(function($book) use ($request) {

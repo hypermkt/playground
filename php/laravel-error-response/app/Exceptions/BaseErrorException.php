@@ -5,7 +5,6 @@ namespace App\Exceptions;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\JsonResponse;
 use RuntimeException;
-use Illuminate\Http\Response;
 
 class BaseErrorException extends RuntimeException implements Responsable
 {
