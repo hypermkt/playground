@@ -23,7 +23,7 @@ class ValidationErrorException extends RuntimeException implements Responsable
         $invalidParams = [];
         foreach ($this->validationErrors as $key => $values) {
             $invalidParams['name'] = $key;
-            $invalidParams['reason'] = $values;
+            $invalidParams['reasons'] = $values;
         }
 
         return new JsonResponse([

@@ -87,7 +87,7 @@ class BookTest extends TestCase
             'invalid-params' => [
                 [
                     'name' => 'title',
-                    'reason' => [
+                    'reasons' => [
                         'The title field is required.'
                     ]
                 ]
