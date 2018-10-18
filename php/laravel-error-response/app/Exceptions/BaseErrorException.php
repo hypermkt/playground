@@ -39,7 +39,7 @@ class BaseErrorException extends RuntimeException implements Responsable
         ], $this->statusCode);
     }
 
-    protected function toCode($statusCode)
+    protected function toCode(int $statusCode): string
     {
         return $this->codes[$statusCode];
     }
