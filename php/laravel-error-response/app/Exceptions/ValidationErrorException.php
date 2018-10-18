@@ -20,19 +20,24 @@ class ValidationErrorException extends RuntimeException implements Responsable
 
     public function toResponse($request)
     {
+        return new JsonResponse([
+            'type' => '',
+            'title' => $this->getMessage(),
+            'code' => 'validation_error',
+            'invalid-params' => [
+                $this->createInvalidParams()
+            ]
+        ], Response::HTTP_UNPROCESSABLE_ENTITY);
+    }
+
+    protected function createInvalidParams(): array
+    {
         $invalidParams = [];
         foreach ($this->validationErrors as $key => $values) {
             $invalidParams['name'] = $key;
             $invalidParams['reasons'] = $values;
         }
 
-        return new JsonResponse([
-            'type' => '',
-            'title' => $this->getMessage(),
-            'code' => 'validation_error',
-            'invalid-params' => [
-                $invalidParams
-            ]
-        ], Response::HTTP_UNPROCESSABLE_ENTITY);
+        return $invalidParams;
     }
 }
