@@ -12,7 +12,6 @@ class BaseErrorException extends RuntimeException implements Responsable
     protected $title;
     protected $code;
     protected $statusCode;
-
     protected $codes = [
         400 => 'bad_request',
         401 => 'unauthorized',
@@ -22,6 +21,13 @@ class BaseErrorException extends RuntimeException implements Responsable
         500 => 'internal_server_error',
     ];
 
+    /**
+     * BaseErrorException constructor.
+     *
+     * @param string $type (将来的に使用するが今は未使用)
+     * @param string $title 簡易エラーメッセージ
+     * @param int $statusCode ステータスコード
+     */
     public function __construct(string $type = "", string $title = "", int $statusCode = 200)
     {
         $this->type = $type;
