@@ -30,12 +30,6 @@ class Handler extends ExceptionHandler
         'password_confirmation',
     ];
 
-    protected $codes = [
-        Response::HTTP_NOT_FOUND => 'not_found',
-        Response::HTTP_INTERNAL_SERVER_ERROR => 'internal_server_error',
-        Response::HTTP_UNAUTHORIZED => 'unauthorized',
-    ];
-
     /**
      * Report or log an exception.
      *
@@ -57,11 +51,6 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
 //        return parent::render($request, $exception);
-        $jsonResponse = [
-            'type' => '',
-            'title' => '',
-            'code' => '',
-        ];
 
         $e = $this->prepareException($exception);
 
@@ -70,25 +59,15 @@ class Handler extends ExceptionHandler
             return (new ValidationErrorException($e->errors(), $e->getMessage(), $e->status))
                 ->toResponse($request);
         } elseif ($e instanceof AuthenticationException) {
-            return (new BaseErrorException('', $e->getMessage(), $this->getCode(Response::HTTP_UNAUTHORIZED), Response::HTTP_UNAUTHORIZED))
+            return (new BaseErrorException('', $e->getMessage(), Response::HTTP_UNAUTHORIZED))
                 ->toResponse($request);
         } elseif ($this->isHttpException($e)) {
-            if ($e instanceof NotFoundHttpException) {
-                $jsonResponse['code'] = $this->getCode(Response::HTTP_NOT_FOUND);
-            }
-            $statusCode = $e->getStatusCode();
-        } else {
-            $jsonResponse['code'] = $this->getCode(Response::HTTP_INTERNAL_SERVER_ERROR);
-            $jsonResponse['title'] = 'Internal Server Error';
-            $statusCode = Response::HTTP_INTERNAL_SERVER_ERROR;
+            return (new BaseErrorException('', $e->getMessage(), $e->getStatusCode()))
+                ->toResponse($request);
         }
 
-        return response()
-            ->json($jsonResponse, $statusCode);
+        return (new BaseErrorException('', 'Internal Server Error', Response::HTTP_INTERNAL_SERVER_ERROR))
+            ->toResponse($request);
     }
 
-    protected function getCode($statusCode)
-    {
-        return $this->codes[$statusCode];
-    }
 }

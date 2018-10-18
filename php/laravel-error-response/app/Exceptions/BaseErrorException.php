@@ -5,6 +5,7 @@ namespace App\Exceptions;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\JsonResponse;
 use RuntimeException;
+use Illuminate\Http\Response;
 
 class BaseErrorException extends RuntimeException implements Responsable
 {
@@ -13,11 +14,16 @@ class BaseErrorException extends RuntimeException implements Responsable
     protected $code;
     protected $statusCode;
 
-    public function __construct(string $type = "", string $title = "", string $code = "", int $statusCode = 200)
+    protected $codes = [
+        Response::HTTP_NOT_FOUND => 'not_found',
+        Response::HTTP_UNAUTHORIZED => 'unauthorized',
+        Response::HTTP_INTERNAL_SERVER_ERROR => 'internal_server_error',
+    ];
+
+    public function __construct(string $type = "", string $title = "", int $statusCode = 200)
     {
         $this->type = $type;
         $this->title = $title;
-        $this->code = $code;
         $this->statusCode = $statusCode;
     }
 
@@ -26,7 +32,12 @@ class BaseErrorException extends RuntimeException implements Responsable
         return new JsonResponse([
             'type' => $this->type,
             'title' => $this->title,
-            'code' => $this->code,
+            'code' => $this->toCode($this->statusCode),
         ], $this->statusCode);
+    }
+
+    protected function toCode($statusCode)
+    {
+        return $this->codes[$statusCode];
     }
 }
