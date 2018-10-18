@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
@@ -32,6 +33,7 @@ class Handler extends ExceptionHandler
     protected $codes = [
         Response::HTTP_NOT_FOUND => 'not_found',
         Response::HTTP_INTERNAL_SERVER_ERROR => 'internal_server_error',
+        Response::HTTP_UNAUTHORIZED => 'unauthorized',
     ];
 
     /**
@@ -66,6 +68,9 @@ class Handler extends ExceptionHandler
         // 422 Validation Error
         if ($e instanceof ValidationException) {
             return (new ValidationErrorException($e->errors(), $e->getMessage(), $e->status))
+                ->toResponse($request);
+        } elseif ($e instanceof AuthenticationException) {
+            return (new BaseErrorException('', $e->getMessage(), $this->getCode(Response::HTTP_UNAUTHORIZED), Response::HTTP_UNAUTHORIZED))
                 ->toResponse($request);
         } elseif ($this->isHttpException($e)) {
             if ($e instanceof NotFoundHttpException) {

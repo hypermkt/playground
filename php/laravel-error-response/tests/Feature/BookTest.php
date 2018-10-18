@@ -49,6 +49,18 @@ class BookTest extends TestCase
         $response->assertStatus(200);
     }
 
+    public function testUpdate_Response401_WhenRequestWithNoAccessToken()
+    {
+        $book = factory(\App\Book::class)->create();
+        $response = $this->putJson('/api/books/' . $book->id, ['title' => 'hoge']);
+        $response->assertStatus(401);
+        $response->assertJson([
+            'type' => '',
+            'title' => 'Unauthenticated.',
+            'code' => 'unauthorized',
+        ]);
+    }
+
     public function testResponse422_WhenValidationError()
     {
         $response = $this->postJson('/api/books', ['title' => '']);
