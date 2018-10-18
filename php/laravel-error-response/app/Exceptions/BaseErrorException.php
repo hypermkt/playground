@@ -15,9 +15,10 @@ class BaseErrorException extends RuntimeException implements Responsable
     protected $statusCode;
 
     protected $codes = [
-        Response::HTTP_NOT_FOUND => 'not_found',
-        Response::HTTP_UNAUTHORIZED => 'unauthorized',
-        Response::HTTP_INTERNAL_SERVER_ERROR => 'internal_server_error',
+        400 => 'bad_request',
+        401 => 'unauthorized',
+        404 => 'not_found',
+        500 => 'internal_server_error',
     ];
 
     public function __construct(string $type = "", string $title = "", int $statusCode = 200)
