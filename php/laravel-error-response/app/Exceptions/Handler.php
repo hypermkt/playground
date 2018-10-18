@@ -58,18 +58,20 @@ class Handler extends ExceptionHandler
 
         // 認証ありエンドポイントでアクセストークンが不正な場合
         } elseif ($e instanceof AuthenticationException) {
-            return (new BaseErrorException('', $e->getMessage(), Response::HTTP_UNAUTHORIZED))
-                ->toResponse($request);
+            return $this->toResponse($request, $e->getMessage(), Response::HTTP_UNAUTHORIZED);
 
         // HTTP系例外が発生した場合
         } elseif ($this->isHttpException($e)) {
-            return (new BaseErrorException('', $e->getMessage(), $e->getStatusCode()))
-                ->toResponse($request);
+            return $this->toResponse($request, $e->getMessage(), $e->getStatusCode());
         }
 
         // それ以外の場合は Internal Server Error とする
-        return (new BaseErrorException('', 'Internal Server Error', Response::HTTP_INTERNAL_SERVER_ERROR))
-            ->toResponse($request);
+        return $this->toResponse($request, 'Internal Server Error', Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
+    protected function toResponse($request, string $message, int $statusCode)
+    {
+         return (new BaseErrorException('', $message, $statusCode))
+            ->toResponse($request);
+    }
 }
