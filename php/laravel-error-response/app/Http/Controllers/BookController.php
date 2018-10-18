@@ -13,9 +13,16 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return response()->json(Book::all());
+        return response()->json((Book::all())->map(function($book) use ($request) {
+            return [
+                'id' => $book->id,
+                'title' => $book->title,
+                'width' => $request->width,
+                'height' => $request->height,
+            ];
+        }));
     }
 
     /**

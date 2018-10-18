@@ -20,8 +20,17 @@ class BookTest extends TestCase
 
     public function testIndex()
     {
-        $response = $this->getJson('/api/books');
+        $book = factory(\App\Book::class)->create();
+        $response = $this->getJson('/api/books?width=200&height=100');
         $response->assertStatus(200);
+        $response->assertJson([
+                [
+                    'id' => $book->id,
+                    'title' => $book->title,
+                    'width' => 200,
+                    'height' => 100,
+                ]
+        ]);
     }
 
     public function testResponse404NotFound_WhenRequestNotExistingRouting()
