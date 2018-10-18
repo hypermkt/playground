@@ -15,7 +15,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        return response()->json(['age' => 'hoge']);
+        return response()->json(Book::all());
     }
 
     /**
