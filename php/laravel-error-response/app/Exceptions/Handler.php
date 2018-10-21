@@ -53,8 +53,9 @@ class Handler extends ExceptionHandler
         $e = $this->prepareException($exception);
 
         if ($e instanceof ValidationException) {
-            return (new ValidationErrorException($e->errors(), $e->getMessage(), $e->status))
-                ->toResponse($request);
+            $validationErrorException = new ValidationErrorException('', $e->getMessage(), Response::HTTP_UNPROCESSABLE_ENTITY);
+            $validationErrorException->setValidationErrors($e->errors());
+            return $validationErrorException->toResponse($request);
 
         // 認証ありエンドポイントでアクセストークンが不正な場合
         } elseif ($e instanceof AuthenticationException) {

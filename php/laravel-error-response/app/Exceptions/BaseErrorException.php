@@ -18,6 +18,7 @@ class BaseErrorException extends RuntimeException implements Responsable
         403 => 'forbidden',
         404 => 'not_found',
         405 => 'method_not_allowed',
+        422 => 'validation_error',
         500 => 'internal_server_error',
     ];
 
@@ -35,11 +36,27 @@ class BaseErrorException extends RuntimeException implements Responsable
         $this->statusCode = $statusCode;
     }
 
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
     public function toResponse($request)
     {
         return new JsonResponse([
-            'type' => $this->type,
-            'title' => $this->title,
+            'type' => $this->getType(),
+            'title' => $this->getTitle(),
             'code' => $this->toCode($this->statusCode),
         ], $this->statusCode);
     }
