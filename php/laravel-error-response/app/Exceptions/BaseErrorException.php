@@ -54,11 +54,19 @@ class BaseErrorException extends RuntimeException implements Responsable
 
     public function toResponse($request)
     {
-        return new JsonResponse([
+        return new JsonResponse(
+            $this->getBasicResponse(),
+            $this->statusCode
+        );
+    }
+
+    protected function getBasicResponse()
+    {
+        return [
             'type' => $this->getType(),
             'title' => $this->getTitle(),
             'code' => $this->toCode($this->statusCode),
-        ], $this->statusCode);
+        ];
     }
 
     protected function toCode(int $statusCode): string

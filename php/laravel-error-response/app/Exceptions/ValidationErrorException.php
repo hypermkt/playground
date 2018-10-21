@@ -27,14 +27,17 @@ class ValidationErrorException extends BaseErrorException
 
     public function toResponse($request)
     {
-        return new JsonResponse([
-            'type' => $this->getType(),
-            'title' => $this->getTitle(),
-            'code' => $this->toCode($this->statusCode),
-            'invalid-params' => [
-                $this->createInvalidParams()
-            ]
-        ], $this->statusCode);
+        return new JsonResponse(
+            array_merge(
+                $this->getBasicResponse(),
+                [
+                    'invalid-params' => [
+                        $this->createInvalidParams()
+                    ]
+                ]
+            ),
+            $this->statusCode
+        );
     }
 
     protected function createInvalidParams(): array
