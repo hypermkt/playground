@@ -2,7 +2,7 @@
 
 namespace App\Exceptions;
 
-class QueryParameterErrorException extends BaseErrorException
+class QueryParameterErrorResponseException extends BaseErrorResponseException
 {
     public function toResponse($request)
     {

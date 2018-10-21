@@ -6,7 +6,7 @@ use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\JsonResponse;
 use RuntimeException;
 
-class BaseErrorException extends RuntimeException implements Responsable
+class BaseErrorResponseException extends RuntimeException implements Responsable
 {
     protected $type;
     protected $title;

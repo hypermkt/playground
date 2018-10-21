@@ -5,7 +5,7 @@ namespace App\Exceptions;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 
-class ValidationErrorException extends BaseErrorException
+class ValidationErrorResponseException extends BaseErrorResponseException
 {
     private $validationErrors = [];
 

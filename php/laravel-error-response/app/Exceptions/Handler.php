@@ -53,7 +53,7 @@ class Handler extends ExceptionHandler
         $e = $this->prepareException($exception);
 
         if ($e instanceof ValidationException) {
-            $validationErrorException = new ValidationErrorException('', $e->getMessage(), Response::HTTP_UNPROCESSABLE_ENTITY);
+            $validationErrorException = new ValidationErrorResponseException('', $e->getMessage(), Response::HTTP_UNPROCESSABLE_ENTITY);
             $validationErrorException->setValidationErrors($e->errors());
             return $validationErrorException->toResponse($request);
 
@@ -72,7 +72,7 @@ class Handler extends ExceptionHandler
 
     protected function toResponse($request, string $message, int $statusCode)
     {
-         return (new BaseErrorException('', $message, $statusCode))
+         return (new BaseErrorResponseException('', $message, $statusCode))
             ->toResponse($request);
     }
 }
