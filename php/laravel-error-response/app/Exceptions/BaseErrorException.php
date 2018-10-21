@@ -52,11 +52,19 @@ class BaseErrorException extends RuntimeException implements Responsable
         return $this->title;
     }
 
+    /**
+     * @return int
+     */
+    public function getStatusCode(): int
+    {
+        return $this->statusCode;
+    }
+
     public function toResponse($request)
     {
         return new JsonResponse(
             $this->getBasicResponse(),
-            $this->statusCode
+            $this->getStatusCode()
         );
     }
 
