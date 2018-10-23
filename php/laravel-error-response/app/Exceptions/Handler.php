@@ -3,7 +3,10 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Response;
+use Illuminate\Validation\ValidationException;
 
 class Handler extends ExceptionHandler
 {
@@ -46,6 +49,30 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+        // アプリケーション固有の例外をHTTP系例外に変換する
+        $e = $this->prepareException($exception);
+
+        if ($e instanceof ValidationException) {
+            $validationErrorException = new ValidationErrorResponseException('', $e->getMessage(), Response::HTTP_UNPROCESSABLE_ENTITY);
+            $validationErrorException->setValidationErrors($e->errors());
+            return $validationErrorException->toResponse($request);
+
+        // 認証ありエンドポイントでアクセストークンが不正な場合
+        } elseif ($e instanceof AuthenticationException) {
+            return $this->toResponse($request, $e->getMessage(), Response::HTTP_UNAUTHORIZED);
+
+        // HTTP系例外が発生した場合
+        } elseif ($this->isHttpException($e)) {
+            return $this->toResponse($request, $e->getMessage(), $e->getStatusCode());
+        }
+
+        // それ以外の場合は Internal Server Error とする
+        return $this->toResponse($request, 'Internal Server Error', Response::HTTP_INTERNAL_SERVER_ERROR);
+    }
+
+    protected function toResponse($request, string $message, int $statusCode)
+    {
+         return (new BaseErrorResponseException('', $message, $statusCode))
+            ->toResponse($request);
     }
 }
