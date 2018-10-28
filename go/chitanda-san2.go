@@ -13,6 +13,7 @@ func main() {
 	feed, _ := fp.ParseURL(url)
 	items := feed.Items
 
+	// _ で値を捨てられる。この変数を使用する目的として、コンパイル時の未使用変数エラーを無くすため。
 	for _, item := range items {
 		fmt.Println(item.Title)
 	}
