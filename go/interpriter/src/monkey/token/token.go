@@ -13,6 +13,7 @@ const (
 	INDENT = "INDENT"
 	INT    = "INT"
 	ASSIGN = "="
+	MINUS  = "-"
 	PLUS   = "+"
 
 	COMMA     = ","
@@ -23,6 +24,17 @@ const (
 	LBRACE = "{"
 	RBRACE = "}"
 
+	BANG     = "!"
+	SLASH    = "/"
+	ASTARISK = "*"
+	LESS     = "<"
+	GREATER  = ">"
+
 	FUNCTION = "FUNCTION"
 	LET      = "LET"
+
+	TRUE  = "TRUE"
+	FALSE = "FALSE"
+	IF    = "IF"
+	ELSE  = "ELSE"
 )
