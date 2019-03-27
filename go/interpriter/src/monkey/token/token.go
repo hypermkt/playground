@@ -1,5 +1,10 @@
 package token
 
+var keywords = map[string]TokenType{
+	"fn":  FUNCTION,
+	"let": LET,
+}
+
 type TokenType string
 type Token struct {
 	Type    TokenType
@@ -38,3 +43,10 @@ const (
 	IF    = "IF"
 	ELSE  = "ELSE"
 )
+
+func LookupIndent(indent string) TokenType {
+	if tok, ok := keywords[indent]; ok {
+		return tok
+	}
+	return INDENT
+}
