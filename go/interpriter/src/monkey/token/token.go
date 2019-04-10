@@ -32,8 +32,8 @@ const (
 	BANG     = "!"
 	SLASH    = "/"
 	ASTARISK = "*"
-	LESS     = "<"
-	GREATER  = ">"
+	LT       = "<"
+	GT       = ">"
 
 	FUNCTION = "FUNCTION"
 	LET      = "LET"
