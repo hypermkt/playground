@@ -1,0 +1,8 @@
+version: '3'
+services:
+  web:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/puppet
