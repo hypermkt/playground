@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+forge "https://forgeapi.puppetlabs.com"
+
+mod 'puppetlabs-puppet_agent'
+
+mod 'puppetlabs-apache'
+

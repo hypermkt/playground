@@ -1,0 +1,25 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    puppetlabs-apache (4.1.0)
+      puppetlabs-concat (< 6.0.0, >= 2.2.1)
+      puppetlabs-stdlib (< 6.0.0, >= 4.13.1)
+    puppetlabs-apt (6.3.0)
+      puppetlabs-stdlib (< 6.0.0, >= 4.16.0)
+      puppetlabs-translate (< 2.0.0, >= 1.0.0)
+    puppetlabs-concat (5.3.0)
+      puppetlabs-stdlib (< 6.0.0, >= 4.13.1)
+      puppetlabs-translate (< 2.0.0, >= 1.0.0)
+    puppetlabs-inifile (2.5.0)
+      puppetlabs-translate (< 2.0.0, >= 1.0.0)
+    puppetlabs-puppet_agent (2.1.1)
+      puppetlabs-apt (< 7.0.0, >= 6.0.0)
+      puppetlabs-inifile (<= 3.0.0, >= 2.4.0)
+      puppetlabs-stdlib (< 6.0.0, >= 5.1.0)
+    puppetlabs-stdlib (5.2.0)
+    puppetlabs-translate (1.2.0)
+
+DEPENDENCIES
+  puppetlabs-apache (>= 0)
+  puppetlabs-puppet_agent (>= 0)
+
