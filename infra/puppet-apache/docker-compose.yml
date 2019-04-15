@@ -6,3 +6,4 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/var/www/puppet
+    privileged: true
