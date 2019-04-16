@@ -15,5 +15,6 @@ class web {
       ensure  => file,
       source => 'puppet:///modules/web/php.ini',
       require => Package['php'],
+      notify  => Class['::apache::service']
   }
 }
