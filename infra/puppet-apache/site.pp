@@ -1,4 +1,4 @@
-include apache
+include web
 
 # class { '::apache':
 # }
