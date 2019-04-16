@@ -13,7 +13,7 @@ class web {
   file {
     '/etc/php.ini':
       ensure  => file,
-      source => 'puppet:///modules/php.ini',
+      source => 'puppet:///modules/web/php.ini',
       require => Package['php'],
   }
 }
