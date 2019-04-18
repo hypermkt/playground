@@ -5,5 +5,5 @@ services:
       context: ./docker
       dockerfile: Dockerfile
     volumes:
-      - .:/var/www/puppet
+      - .:/etc/puppetlabs/code/environments/production
     privileged: true
