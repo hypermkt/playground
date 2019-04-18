@@ -5,6 +5,7 @@ RUN yum install -y -q puppet-agent
 
 WORKDIR /etc/puppetlabs/code/environments/production
 
-ADD hiera.yaml /etc/puppetlabs/puppet
+# globalのhieraを使用しないようにするため
+RUN echo -n > /etc/puppetlabs/puppet/hiera.ymaml
 
 CMD ["/usr/sbin/init"]
