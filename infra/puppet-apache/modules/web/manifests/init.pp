@@ -1,6 +1,6 @@
 class web {
   class { '::apache':
-    service_restart => 'systemctl reload httpd',
+    # service_restart => 'systemctl reload httpd',
   }
 
   include ::apache::mod::php

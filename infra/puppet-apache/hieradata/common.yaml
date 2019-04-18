@@ -1,0 +1,4 @@
+---
+
+apache::listen: 80
+apache::service_restart: 'systemctl reload httpd'

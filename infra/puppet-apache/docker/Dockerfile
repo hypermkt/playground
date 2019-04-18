@@ -5,4 +5,6 @@ RUN yum install -y -q puppet-agent
 
 WORKDIR /var/www/puppet
 
+ADD hiera.yaml /etc/puppetlabs/puppet
+
 CMD ["/usr/sbin/init"]
