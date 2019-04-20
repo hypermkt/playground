@@ -1,0 +1,12 @@
+version: '3'
+services:
+  server:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.server
+    privileged: true
+  client:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.client
+    privileged: true
