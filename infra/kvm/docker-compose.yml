@@ -1,0 +1,7 @@
+version: '3'
+services:
+  host:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    privileged: true
