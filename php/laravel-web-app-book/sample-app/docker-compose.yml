@@ -1,0 +1,28 @@
+version: '3'
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    environment:
+      TZ: Asia/Tokyo
+    depends_on:
+      - app
+  app:
+    build: docker/web
+    volumes:
+      - .:/var/www/app
+    depends_on:
+      - database
+  database:
+    image: mysql:5.7
+    volumes:
+      - ./docker/database/my.cnf:/etc/mysql/conf.d/my.cnf:ro
+    environment:
+      TZ: Asia/Tokyo
+      MYSQL_DATABASE: sampleapp_development
+      MYSQL_USER: sampleapp
+      MYSQL_PASSWORD: sampleapp_development
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
