@@ -6,7 +6,11 @@ $password = 'sampleapp_development';
 try {
     $db = new PDO($dsn, $username, $password);
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        createBook($db, $_POST['title']);
+        if ($_POST['mode'] == 'safe') {
+            createSafeBook($db, $_POST['title']);
+        } else {
+            createBook($db, $_POST['title']);
+        }
     }
     $books = getBooks($db);
 } catch (PDOException $e) {
@@ -19,6 +23,14 @@ function createBook($db, $title)
     $sql = "insert into books (title) values ('{$title}');";
     $prepare = $db->prepare($sql);
     $prepare->execute();
+}
+
+function createSafeBook($db, $title)
+{
+    // SQLインジェクションの資料のためわざとこうしている
+    $sql = "insert into books (title) values (?);";
+    $prepare = $db->prepare($sql);
+    $prepare->execute([$title]);
 }
 
 function getBooks($db)
@@ -37,6 +49,13 @@ function getBooks($db)
 
 <form method="post" action="index.php">
   <input type="text" name="title">
+  <input type="hidden" name="mode" value="bad">
+  <input type="submit" value="送信">
+</form>
+
+<form method="post" action="index.php">
+  <input type="text" name="title">
+  <input type="hidden" name="mode" value="safe">
   <input type="submit" value="送信">
 </form>
 
