@@ -1,36 +1,19 @@
 <?php
-$dsn = 'mysql:dbname=sampleapp_development;host=database';
-$username = 'sampleapp';
-$password = 'sampleapp_development';
+$dsn = 'mysql:dbname=sample;host=database';
+$username = 'sample';
+$password = 'sample';
 
-try {
-    $db = new PDO($dsn, $username, $password);
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        if ($_POST['mode'] == 'safe') {
-            createSafeBook($db, $_POST['title']);
-        } else {
-            createBook($db, $_POST['title']);
-        }
-    }
-    $books = getBooks($db);
-} catch (PDOException $e) {
-    echo 'Connection failed: ' . $e->getMessage();
+$db = new PDO($dsn, $username, $password);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    createBook($db, $_POST['title']);
 }
+$books = getBooks($db);
 
 function createBook($db, $title)
 {
-    // SQLインジェクションの資料のためわざとこうしている
     $sql = "insert into books (title) values ('{$title}');";
     $prepare = $db->prepare($sql);
     $prepare->execute();
-}
-
-function createSafeBook($db, $title)
-{
-    // SQLインジェクションの資料のためわざとこうしている
-    $sql = "insert into books (title) values (?);";
-    $prepare = $db->prepare($sql);
-    $prepare->execute([$title]);
 }
 
 function getBooks($db)
@@ -53,26 +36,18 @@ function getBooks($db)
   <input type="submit" value="送信">
 </form>
 
-<form method="post" action="index.php">
-  <input type="text" name="title">
-  <input type="hidden" name="mode" value="safe">
-  <input type="submit" value="送信">
-</form>
-
 <table>
   <tr>
     <th>id</th>
     <th>title</th>
   </tr>
-  <?php for($i = 0; $i < count($books); $i++): ?>
-  <tr>
-    <td><?= $books[$i]['id']?></td>
-    <td><?= $books[$i]['title']?></td>
-  </tr>
-  <?php endfor;?>
+    <?php for($i = 0; $i < count($books); $i++): ?>
+      <tr>
+        <td><?= $books[$i]['id']?></td>
+        <td><?= $books[$i]['title']?></td>
+      </tr>
+    <?php endfor;?>
 
 </table>
-
-
 </body>
 </html>

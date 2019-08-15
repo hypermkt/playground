@@ -3,7 +3,7 @@ services:
   web:
     build: docker/web
     ports:
-      - "80:80"
+      - "8888:80"
     volumes:
       - .:/var/www/app
     depends_on:
@@ -15,7 +15,7 @@ services:
       - ./docker/database/my.cnf:/etc/mysql/conf.d/my.cnf:ro
     environment:
       TZ: Asia/Tokyo
-      MYSQL_DATABASE: sampleapp_development
-      MYSQL_USER: sampleapp
-      MYSQL_PASSWORD: sampleapp_development
+      MYSQL_DATABASE: sample
+      MYSQL_USER: sample
+      MYSQL_PASSWORD: sample
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
