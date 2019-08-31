@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "nickanme": "nickname1",
+    "thumbnail_url": "http://img.dev.anikore.jp/images/profile/0/0/1/1/1.jpg?width=125&height=125&type=crop",
+    "reviews_count": 3,
+    "thanks_count": 3,
+    "last_review_date": "2019-08-10T22:30:11.000+09:00",
+    "rank": 1
+  },
+  {
+    "id": 2,
+    "nickanme": "nickname2",
+    "thumbnail_url": "http://img.dev.anikore.jp/images/profile/0/0/2/2/2.jpg?width=125&height=125&type=crop",
+    "reviews_count": 2,
+    "thanks_count": 2,
+    "last_review_date": "2019-08-10T22:30:11.000+09:00",
+    "rank": 2
+  },
+  {
+    "id": 3,
+    "nickanme": "nickname3",
+    "thumbnail_url": "http://img.dev.anikore.jp/images/profile/0/0/3/3/3.jpg?width=125&height=125&type=crop",
+    "reviews_count": 1,
+    "thanks_count": 1,
+    "last_review_date": "2019-08-10T22:30:11.000+09:00",
+    "rank": 3
+  },
+  {
+    "id": 4,
+    "nickanme": "nickname4",
+    "thumbnail_url": "http://img.dev.anikore.jp/images/profile/0/0/3/3/3.jpg?width=125&height=125&type=crop",
+    "reviews_count": 1,
+    "thanks_count": 1,
+    "last_review_date": "2019-08-10T22:30:11.000+09:00",
+    "rank": 4
+  },
+  {
+    "id": 5,
+    "nickanme": "nickname5",
+    "thumbnail_url": "http://img.dev.anikore.jp/images/profile/0/0/3/3/3.jpg?width=125&height=125&type=crop",
+    "reviews_count": 1,
+    "thanks_count": 1,
+    "last_review_date": "2019-08-10T22:30:11.000+09:00",
+    "rank": 5
+  },
+  {
+    "id": 6,
+    "nickanme": "nickname6",
+    "thumbnail_url": "http://img.dev.anikore.jp/images/profile/0/0/3/3/3.jpg?width=125&height=125&type=crop",
+    "reviews_count": 1,
+    "thanks_count": 1,
+    "last_review_date": "2019-08-10T22:30:11.000+09:00",
+    "rank": 6
+  },
+  {
+    "id": 7,
+    "nickanme": "nickname7",
+    "thumbnail_url": "http://img.dev.anikore.jp/images/profile/0/0/3/3/3.jpg?width=125&height=125&type=crop",
+    "reviews_count": 1,
+    "thanks_count": 1,
+    "last_review_date": "2019-08-10T22:30:11.000+09:00",
+    "rank": 7
+  },
+  {
+    "id": 8,
+    "nickanme": "nickname8",
+    "thumbnail_url": "http://img.dev.anikore.jp/images/profile/0/0/3/3/3.jpg?width=125&height=125&type=crop",
+    "reviews_count": 1,
+    "thanks_count": 1,
+    "last_review_date": "2019-08-10T22:30:11.000+09:00",
+    "rank": 8
+  },
+  {
+    "id": 9,
+    "nickanme": "nickname9",
+    "thumbnail_url": "http://img.dev.anikore.jp/images/profile/0/0/3/3/3.jpg?width=125&height=125&type=crop",
+    "reviews_count": 1,
+    "thanks_count": 1,
+    "last_review_date": "2019-08-10T22:30:11.000+09:00",
+    "rank": 9
+  },
+  {
+    "id": 10,
+    "nickanme": "nickname10",
+    "thumbnail_url": "http://img.dev.anikore.jp/images/profile/0/0/3/3/3.jpg?width=125&height=125&type=crop",
+    "reviews_count": 1,
+    "thanks_count": 1,
+    "last_review_date": "2019-08-10T22:30:11.000+09:00",
+    "rank": 10
+  }
+]
+
