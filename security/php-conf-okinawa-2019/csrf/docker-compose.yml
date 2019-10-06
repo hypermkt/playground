@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    build: docker/web
+    ports:
+      - "8888:80"
+    volumes:
+      - .:/var/www/app
+    depends_on:
+      - database
+  database:
+    image: mysql:5.7
+    volumes:
+      - ./docker/database/initdb.d/:/docker-entrypoint-initdb.d/:ro
+      - ./docker/database/my.cnf:/etc/mysql/conf.d/my.cnf:ro
+    environment:
+      TZ: Asia/Tokyo
+      MYSQL_DATABASE: sample
+      MYSQL_USER: sample
+      MYSQL_PASSWORD: sample
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
