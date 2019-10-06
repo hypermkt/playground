@@ -67,7 +67,7 @@ function getBooks($db)
         <td><?= $books[$i]['id']?></td>
         <td><?= $books[$i]['title']?></td>
         <td>
-          <form action="./index.php" method="post">
+          <form action="index.php" method="post">
             <input type="hidden" name="id" value="<?=$books[$i]['id']?>">
             <input type="hidden" name="mode" value="delete">
             <input type="submit" value="削除">
