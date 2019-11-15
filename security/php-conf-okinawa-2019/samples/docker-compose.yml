@@ -19,3 +19,8 @@ services:
       MYSQL_USER: sample
       MYSQL_PASSWORD: sample
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"
+      - "1025:1025"
