@@ -23,7 +23,7 @@ const person = {
 
 
 let favoritvjeActivities: any[];
-favoriteActivities = ['Sports', 'Game']
+favoritvjeActivities = ['Sports', 'Game']
 
 for (const hobby of person.hobbies) {
   console.log(hobby);
