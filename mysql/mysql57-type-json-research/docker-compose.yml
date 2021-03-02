@@ -1,0 +1,10 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - ./initdb.d/:/docker-entrypoint-initdb.d/:ro
+    environment:
+      MYSQL_DATABASE: sample
+      MYSQL_USER: sample
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
