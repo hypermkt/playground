@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>プロジェクト管理</title>
+    <link rel="stylesheet" href="app.css" />
+    <script src="dist/app.js" defer></script>
+  </head>
+  <body>
+    <template id="project-input">
+      <form>
+        <div class="form-control">
+          <label for="title">タイトル</label>
+          <input type="text" id="title" />
+        </div>
+        <div class="form-control">
+          <label for="description">説明</label>
+          <textarea id="description" rows="3"></textarea>
+        </div>
+        <div class="form-control">
+          <label for="manday">人日</label>
+          <input type="number" id="manday" step="1" min="0" max="10000" />
+        </div>
+        <button type="submit">プロジェクト追加</button>
+      </form>
+    </template>
+    <template id="single-project">
+      <li></li>
+    </template>
+    <template id="project-list">
+      <section class="projects">
+        <header>
+          <h2></h2>
+        </header>
+        <ul></ul>
+      </section>
+    </template>
+    <div id="app"></div>
+  </body>
+</html>
