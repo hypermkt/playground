@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 
-gem 'puppet', '~> 5.0'
+gem 'puppet', '~> 6.13'
 gem 'librarian-puppet'
