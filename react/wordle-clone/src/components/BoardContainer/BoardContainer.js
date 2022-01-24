@@ -1,4 +1,4 @@
-import { Box, SimpleGrid, Square } from '@chakra-ui/react'
+import { Box, SimpleGrid } from '@chakra-ui/react'
 import { Board } from '../Board';
 
 export const BoardContainer = () => {
