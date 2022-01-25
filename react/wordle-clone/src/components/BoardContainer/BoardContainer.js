@@ -10,11 +10,11 @@ export const BoardContainer = () => {
     <>
       <Box w="100%" p={4}>
         <SimpleGrid columns={5} spacing={3}>
-          <Board character={words[0][0]} />
-          <Board character={words[0][1]} />
-          <Board character={words[0][2]} />
-          <Board character={words[0][3]} />
-          <Board character={words[0][4]} />
+          <Board character={words[0]} />
+          <Board character={words[1]} />
+          <Board character={words[2]} />
+          <Board character={words[3]} />
+          <Board character={words[4]} />
 
           <Board />
           <Board />
