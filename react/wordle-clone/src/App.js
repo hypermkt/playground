@@ -10,15 +10,15 @@ function App() {
   return (
     <div className="App">
       <Container>
-        <Center w="500px">
+        <Center w="540px">
           <SimpleGrid columns={1} spacing={0}>
-            <Box width="500px">
+            <Box width="500px" marginLeft="20px">
               <Header />
             </Box>
-            <Box width="500px">
+            <Box width="500px" marginLeft="20px">
               <BoardContainer />
             </Box>
-            <Box width="500px">
+            <Box width="540px">
               <GameKeyboard />
             </Box>
           </SimpleGrid>

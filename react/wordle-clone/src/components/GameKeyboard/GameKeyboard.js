@@ -17,7 +17,8 @@ export const GameKeyboard = () => {
         <KeyboardButton character={"O"} />
         <KeyboardButton character={"P"} />
       </SimpleGrid>
-      <SimpleGrid columns={9} spacing={2}>
+
+      <SimpleGrid columns={9} spacing={2} marginLeft="20px" marginRight="20px">
         <KeyboardButton character={"A"} />
         <KeyboardButton character={"S"} />
         <KeyboardButton character={"D"} />
@@ -40,8 +41,8 @@ export const GameKeyboard = () => {
         <KeyboardButton character={"M"} />
 
         <IconButton
-          colorScheme="gray"
-          height="70px"
+          backgroundColor="#d3d6da"
+          height="58px"
           icon={<FiDelete />}
         />
       </SimpleGrid>
