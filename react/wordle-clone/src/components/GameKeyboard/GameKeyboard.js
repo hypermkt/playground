@@ -1,8 +1,12 @@
+import { useDispatch } from "react-redux";
 import { KeyboardButton } from '../KeyboardButton';
 import { SimpleGrid, IconButton } from '@chakra-ui/react';
 import { FiDelete } from "react-icons/fi";
+import { deleteWord } from '../../redux/action/keyboard.action';
 
 export const GameKeyboard = () => {
+  const dispatch = useDispatch();
+
   return (
     <>
       <SimpleGrid columns={10} spacing={2}>
@@ -44,6 +48,7 @@ export const GameKeyboard = () => {
           backgroundColor="#d3d6da"
           height="58px"
           icon={<FiDelete />}
+          onClick={() => dispatch(deleteWord())}
         />
       </SimpleGrid>
     </>

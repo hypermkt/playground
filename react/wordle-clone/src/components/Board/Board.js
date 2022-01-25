@@ -1,9 +1,11 @@
-import { Square } from '@chakra-ui/react'
+import { Square, Text } from '@chakra-ui/react'
 
-export const Board = () => {
+export const Board = (props) => {
   return (
     <>
-      <Square size="90px" border="2px" borderColor="#d3d6da" color="white"></Square>
+      <Square size="90px" border="2px" borderColor="#d3d6da">
+        <Text fontSize="6xl">{props.character}</Text>
+      </Square>
     </>
   )
 }
