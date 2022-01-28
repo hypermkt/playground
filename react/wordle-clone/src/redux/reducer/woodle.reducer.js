@@ -26,6 +26,12 @@ export const wordle = (state = initialState, action)  => {
         words: deletedWords
       }
 
+    case 'GO_NEXT_ROW':
+      return {
+        ...state,
+        currentRow: state.currentRow + 1
+      }
+
     default:
       return state;
   }

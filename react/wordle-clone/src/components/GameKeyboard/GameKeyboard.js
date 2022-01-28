@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
 import { KeyboardButton } from '../KeyboardButton';
-import { SimpleGrid, IconButton } from '@chakra-ui/react';
+import { SimpleGrid, IconButton, Button } from '@chakra-ui/react';
 import { FiDelete } from "react-icons/fi";
-import { deleteWord } from '../../redux/action/keyboard.action';
+import { deleteWord, goNextRow } from '../../redux/action/keyboard.action';
 
 export const GameKeyboard = () => {
   const dispatch = useDispatch();
@@ -35,7 +35,16 @@ export const GameKeyboard = () => {
       </SimpleGrid>
 
       <SimpleGrid columns={9} spacing={2}>
-        <KeyboardButton character={"Enter"} />
+        <Button
+          backgroundColor="#d3d6da"
+          width="43px"
+          height="58px"
+          marginBottom="2"
+          onClick={() => dispatch(goNextRow())}
+        >
+          Enter
+        </Button>
+
         <KeyboardButton character={"Z"} />
         <KeyboardButton character={"X"} />
         <KeyboardButton character={"C"} />

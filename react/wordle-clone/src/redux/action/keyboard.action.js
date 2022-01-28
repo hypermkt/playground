@@ -6,3 +6,7 @@ export const inputWord = value => ({
 export const deleteWord = value => ({
   type : 'DELETE_WORD',
 })
+
+export const goNextRow = value => ({
+  type : 'GO_NEXT_ROW',
+})
