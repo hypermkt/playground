@@ -1,17 +1,26 @@
 const initialState = {
-  words: []
+  currentRow: 0,
+  words: [
+    [],
+    [],
+    [],
+    [],
+    [],
+  ]
 }
 
 export const wordle = (state = initialState, action)  => {
   switch(action.type) {
     case 'INPUT_WORD':
-      const newWords = (state.words.length <= 4) ? state.words.concat(action.payload) : state.words;
+      let newWords = state.words;
+      newWords[state.currentRow] = (newWords[state.currentRow].length <= 4) ? newWords[state.currentRow].concat(action.payload) : state.words[state.currentRow];
       return {
         ...state,
         words: newWords,
       }
     case 'DELETE_WORD':
-      let deletedWords = state.words.slice(0, state.words.length - 1)
+      let deletedWords = state.words;
+      deletedWords[state.currentRow] = deletedWords[state.currentRow].slice(0, state.words[state.currentRow].length - 1)
       return {
         ...state,
         words: deletedWords
