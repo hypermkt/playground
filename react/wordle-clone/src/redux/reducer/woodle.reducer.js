@@ -1,5 +1,13 @@
 const initialState = {
+  targetWord: ['H', 'Y', 'P', 'E', 'R'],
   currentRow: 0,
+  rowValidatable: [
+    false,
+    false,
+    false,
+    false,
+    false
+  ], 
   words: [
     [],
     [],
@@ -30,6 +38,14 @@ export const wordle = (state = initialState, action)  => {
       return {
         ...state,
         currentRow: state.currentRow + 1
+      }
+
+    case 'CHANGE_ROW_VALIDATABLE':
+      let rowValidatable = state.rowValidatable
+      rowValidatable[state.currentRow] = true
+      return {
+        ...state,
+        rowValidatable: rowValidatable
       }
 
     default:

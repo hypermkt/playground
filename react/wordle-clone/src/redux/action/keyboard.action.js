@@ -10,3 +10,7 @@ export const deleteWord = value => ({
 export const goNextRow = value => ({
   type : 'GO_NEXT_ROW',
 })
+
+export const changeRowValidatable = value => ({
+  type : 'CHANGE_ROW_VALIDATABLE',
+})

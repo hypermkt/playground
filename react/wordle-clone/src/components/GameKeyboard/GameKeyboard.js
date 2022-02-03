@@ -2,10 +2,15 @@ import { useDispatch } from "react-redux";
 import { KeyboardButton } from '../KeyboardButton';
 import { SimpleGrid, IconButton, Button } from '@chakra-ui/react';
 import { FiDelete } from "react-icons/fi";
-import { deleteWord, goNextRow } from '../../redux/action/keyboard.action';
+import { deleteWord, changeRowValidatable, goNextRow } from '../../redux/action/keyboard.action';
 
 export const GameKeyboard = () => {
   const dispatch = useDispatch();
+
+  const handleOnClickEnterButton = () => {
+    dispatch(changeRowValidatable())
+    dispatch(goNextRow())
+  }
 
   return (
     <>
@@ -40,7 +45,7 @@ export const GameKeyboard = () => {
           width="43px"
           height="58px"
           marginBottom="2"
-          onClick={() => dispatch(goNextRow())}
+          onClick={handleOnClickEnterButton}
         >
           Enter
         </Button>
