@@ -37,6 +37,11 @@ const WrappedSqure = styled(Square)`
           color: white;
           background: #c9b458;
         `;
+      default: 
+        return css`
+        color: black;
+        background: white;
+      `;
     }
   }}
 `;
